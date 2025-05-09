@@ -1,0 +1,23 @@
+* {
+    box-sizing: border-box;
+    
+}
+.icon {
+    width: 50px;
+    height: 50px;
+}
+a {
+    display: flex;
+    content: 50px;
+    justify-content: center;
+}
+.aboutshen {
+    flex-direction: column;
+    width: 200px;
+    border: 0px solid #ccc;
+    text-align: center;
+    height: 50px;
+    background-size: cover;
+    background-position: center;
+    align-items: center;
+}
