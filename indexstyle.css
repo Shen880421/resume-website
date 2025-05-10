@@ -17,14 +17,7 @@
     height: 1080px;
     background-color: #F2E1C9;
 }
-.icon {
-    width: 50px;
-    height: 50px;
-}
-a {
-    display: flex;
-    justify-content: center;
-}
+
 .photo1 {
     background-color: rgba(150, 36, 36, 0.5);
     width: 100%;
@@ -35,14 +28,54 @@ a {
     width: 100%;
     height: 300px;
 }
-.basicinfo > p {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+
+.h1 {
+    font-size: 60px;
 }
-.basicinfo_info {
-    width: 200px;
-    border: 0px solid #ccc;
-    text-align: center;
+
+
+.icondisplay > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+    gap: 20px;
+}
+i.fi {
+    font-size: 24px;
+    color: #333;
+    transition: color 0.3s;
+    width: 50px;
     height: 50px;
+    background: #ac8267e0;
+    text-align: center;
+    align-content: center;
+    border-radius: 10px;
+}
+i.fi-instagram:hover {
+    color: #911c43; /* IG 粉色調 */
+}
+i.fi-facebook:hover {
+    color: #3b5998; /* FB 藍色調 */
+}
+i.fi-line:hover {
+    color: #0ee63d; /* TW 藍色調 */
+}
+
+    
+.basicinfo_info {
+    width: 35%;
+    height: 50px;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #f0f0f062;
+    border-radius: 15px;
+}
+.basicinfo_list {
+    display: flex;
+    flex-wrap: wrap;      /* 自動換行（如果寬度不夠） */
+    gap: 20px;            /* 元素間距 */
+    justify-content: center;
 }
