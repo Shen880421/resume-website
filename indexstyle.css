@@ -2,6 +2,15 @@
     box-sizing: border-box;
     
 }
+.lxgw-wenkai-mono-tc-regular {
+  font-family: "LXGW WenKai Mono TC", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+body {
+  font-family: "LXGW WenKai Mono TC", monospace;
+}
+
 .leftandright {
     display: flex;
     width: 100%;
