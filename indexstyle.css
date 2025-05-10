@@ -20,7 +20,8 @@ body {
 .left {
     width: 20%;
     height: 1080px;
-    background-color: #91603F
+    background-color: #412b1c;
+    border: 3px solid #7c523680;
 }
 .right {
     width: 80%;
