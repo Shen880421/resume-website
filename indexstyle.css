@@ -26,13 +26,13 @@ body {
 }
 .right {
     width: 80%;
-    height: 1080px;
+    height: 100%;
     background-color: #F2E1C9;
-    background-image: url(icon/character_PNG.png);
+    /* background-image: url(icon/character_PNG.png);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: right bottom;
-    background-size: 256px 184px;
+    background-size: 256px 184px; */
     margin-left: 20%;
 }
 
