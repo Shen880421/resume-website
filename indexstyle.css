@@ -111,6 +111,9 @@ i.fi-line:hover {
         width: 100%;
         margin-left: 0px;
     }
+    .leftandright {
+        width: 425px;
+    }
 }
 @media (min-width: 426px) {
     #mobile {
