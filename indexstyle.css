@@ -2,18 +2,7 @@
     box-sizing: border-box;
     
 }
-@media (max-width: 425px) {
-    #desktop {
-        display: none;
-    }
-    
-}
-@media (min-width: 426px) {
-    #mobile {
-        display: none;
-    }
-    
-}
+
 .lxgw-wenkai-mono-tc-regular {
   font-family: "LXGW WenKai Mono TC", monospace;
   font-weight: 400;
@@ -31,7 +20,7 @@ body {
     height: 100%;
 }
 .left {
-    width: 384px;
+    width: 20%;
     height: 100%;
     background-color: #6e4931;
     background-image: url(left2.jpg);
@@ -44,20 +33,13 @@ body {
     margin: 20px;
 }
 .right {
-    width: 1536px;
+    width: calc(100% - 384px);
     height: 100%;
     background-color: #F2E1C9;
-    /* background-image: url(icon/character_PNG.png);
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: right bottom;
-    background-size: 256px 184px; */
-    margin-left: 20%;
-    position: relative;
+    margin-left: 384px;
 }
 
 .photo1 {
-    height: 20%;
     width: 100%;
     border-radius: 30px;
 }
@@ -120,4 +102,19 @@ i.fi-line:hover {
     flex-wrap: wrap;      /* 自動換行（如果寬度不夠） */
     gap: 20px;            /* 元素間距 */
     justify-content: center;
+}
+@media (max-width: 425px) {
+    #desktop {
+        display: none;
+    }
+    .right {
+        width: 100%;
+        margin-left: 0px;
+    }
+}
+@media (min-width: 426px) {
+    #mobile {
+        display: none;
+    }
+    
 }
