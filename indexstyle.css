@@ -2,13 +2,13 @@
     box-sizing: border-box;
     
 }
-@media (max-width: 768px) {
+@media (max-width: 425px) {
     #desktop {
         display: none;
     }
     
 }
-@media (min-width: 769px) {
+@media (min-width: 426px) {
     #mobile {
         display: none;
     }
