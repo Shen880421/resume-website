@@ -66,11 +66,11 @@ body {
     text-decoration: none;
 }
 i.fi {
-    font-size: 60px;
+    font-size: 300%;
     color: #333;
     transition: color 0.5s;
-    width: 100px;
-    height: 100px;
+    width: 25%;
+    height: 70%;
     background: #ac8267e0;
     text-align: center;
     align-content: center;
@@ -113,6 +113,13 @@ i.fi-line:hover {
     }
     .leftandright {
         width: 425px;
+    }
+    i.fi {
+    font-size: 10%;
+    color: #333;
+    transition: color 0.5s;
+    width: 25%;
+    height: 20%;
     }
 }
 @media (min-width: 426px) {
