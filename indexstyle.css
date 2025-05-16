@@ -51,6 +51,21 @@ body {
     
 }
 
+/* ul.pages {
+    display: flex;
+    background-color:#F2E1C9;
+    width: 370px;
+    gap :10px;
+    border-top: 1px solid #6e4931;
+    border-right: 1px solid #6e4931;
+    border-left: 1px solid #6e4931;
+    border-radius: 5px;
+}
+ul.pages > li:hover {
+    background-color: #6e4931;
+    color: #F2E1C9;
+} */
+
 .h1 {
     font-size: 60px;
     margin: 20px;
