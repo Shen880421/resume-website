@@ -57,12 +57,10 @@ body {
 }
 
 
-.icondisplay > a {
+.icondisplay a {
     display: flex;
     justify-content: center;
-    align-items: center;
     height: 120px;
-    gap: 20px;
     text-decoration: none;
 }
 i.fi {
