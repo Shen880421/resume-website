@@ -20,7 +20,7 @@ body {
 }
 
 .leftandright {
-    display: flex;
+    display: block;
     width: 100%;
     height: 100%;
 }
@@ -35,7 +35,7 @@ body {
     border-radius: 0 50px 0px 0;
 }
 .left_position {
-    margin: 20px;
+    padding: 20px;
 }
 section.left_nav {
     display: flex;
@@ -45,18 +45,21 @@ section.left_nav {
     width: 80%;
     height: 100%;
     background-color: #F2E1C9;
-    margin-left: 20%;
+    padding-left: 20%;
 }
-
+.right_size {
+    display: inline-block;
+    width: 100%;
+}
 .photo1 {
     width: 100%;
     border-radius: 30px;
 }
 
 .photo2 {
-    width: 100%;
+    width: 80vw;
+    height: 100%;
     padding: 20px;
-    
 }
 
 /* ul.pages {
@@ -131,6 +134,31 @@ i.fi-line:hover {
     padding: 10px;
     box-shadow: 5px 3px 8px 4px #c48f6dc2;
 }
+.basicinfo_table {
+    margin-left: 10%;
+    height: fit-content;
+}
+tbody {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+
+}
+tr {
+    display: flex;
+    flex-direction: column;
+    font-size: clamp(8px, 5vw, 24px);
+    align-items: center;
+    background-color: #f0f0f062;
+    border-radius: 15px;
+    box-shadow: 5px 3px 8px 4px #c48f6dc2;
+}
+.td {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
 .skill::before {
     content: url(check_icon_16px.png);
     padding-right: 5px;
@@ -144,21 +172,21 @@ i.fi-line:hover {
     padding-left: 10%;
 }
 @media (max-width: 425px) {
-    .h1 {
-        font-size: 16px;
-    }
-    .basicinfo_info {
-        font-size: 8px;
-    }
     #desktop {
         display: none;
     }
     .right {
-        width: 100%;
-        margin-left: 0px;
+        width: 100vw;
+        margin: 0px;
+        padding-top: 0px;
+        padding-left: 20px;
+        padding-right: 20px;
     }
     .leftandright {
-        width: 425px;
+        width: 100%;
+    }
+    .photo2 {
+        width: 100vw;
     }
     i.fi {
     font-size: 10%;
