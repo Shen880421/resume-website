@@ -75,7 +75,7 @@ ul.pages > li:hover {
 } */
 
 .h1 {
-    font-size: clamp(12px, 5vw, 32px);
+    font-size: clamp(24px, 5vw, 64px);
     margin: 20px;
 }
 .h1::before {
@@ -124,11 +124,12 @@ i.fi-line:hover {
     width: fit-content;
     display: block;
     height: fit-content;
-    font-size: clamp(8px, 5vw, 16px);
+    font-size: clamp(8px, 5vw, 24px);
     align-items: center;
     background-color: #f0f0f062;
     border-radius: 15px;
     padding: 10px;
+    box-shadow: 5px 3px 8px 4px #c48f6dc2;
 }
 .skill::before {
     content: url(check_icon_16px.png);
