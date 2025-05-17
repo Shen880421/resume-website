@@ -1,11 +1,11 @@
 * {
     box-sizing: border-box;
     
+    
 }
 
 .lxgw-wenkai-mono-tc-regular {
   font-family: "LXGW WenKai Mono TC", monospace;
-  font-weight: 400;
   font-style: normal;
 }
 body {
@@ -18,7 +18,7 @@ body {
 
 .leftandright {
     display: flex;
-    width: 1920px;
+    width: 100%;
     height: 100%;
 }
 .left {
@@ -34,11 +34,15 @@ body {
 .left_position {
     margin: 20px;
 }
+section.left_nav {
+    display: flex;
+    justify-content: center;
+}
 .right {
-    width: calc(100% - 384px);
+    width: 80%;
     height: 100%;
     background-color: #F2E1C9;
-    margin-left: 384px;
+    margin-left: 20%;
 }
 
 .photo1 {
@@ -47,7 +51,6 @@ body {
 }
 
 .photo2 {
-    height: 300px;
     width: 100%;
     padding: 20px;
     
@@ -69,27 +72,39 @@ ul.pages > li:hover {
 } */
 
 .h1 {
-    font-size: 60px;
+    font-size: clamp(12px, 5vw, 32px);
     margin: 20px;
 }
+.h1::before {
+    content: url(h1_icon_16px.png);
+    
+}
 
-
-.icondisplay a {
+.icondisplay {
     display: flex;
-    justify-content: center;
-    height: 120px;
     text-decoration: none;
+    flex-direction: column;
+    gap: 50px;
+    width: fit-content;
+    height: fit-content;
+    padding: 10px;
+}
+.icondisplay a {
+    display: inline-block;
+    font-size:clamp(8px, 5vw, 64px);
+    background: #ac8267e0;
+    border-radius: 20px;
+    padding: 10px;
 }
 i.fi {
-    font-size: 300%;
+    font-size:clamp(8px, 5vw, 64px);
     color: #333;
     transition: color 0.5s;
-    width: 25%;
-    height: 70%;
-    background: #ac8267e0;
     text-align: center;
     align-content: center;
-    border-radius: 20px;
+    width: clamp(8px, 5vw, 64px);
+    height: clamp(8px, 5vw, 64px);
+    
 }
 i.fi-instagram:hover {
     color: #911c43;
@@ -103,22 +118,34 @@ i.fi-line:hover {
 
     
 .basicinfo_info {
-    width: 35%;
-    height: 50px;
-    font-size: 18px;
-    display: flex;
-    justify-content: space-around;
+    width: fit-content;
+    display: block;
+    height: fit-content;
+    font-size: clamp(8px, 5vw, 16px);
     align-items: center;
     background-color: #f0f0f062;
     border-radius: 15px;
+    padding: 10px;
+}
+.skill::before {
+    content: url(check_icon_16px.png);
+    padding-right: 5px;
 }
 .basicinfo_list {
+    flex-basis:0;
     display: flex;
     flex-wrap: wrap;      /* 自動換行（如果寬度不夠） */
     gap: 20px;            /* 元素間距 */
-    justify-content: center;
+    justify-content: flex-start;
+    padding-left: 10%;
 }
 @media (max-width: 425px) {
+    .h1 {
+        font-size: 16px;
+    }
+    .basicinfo_info {
+        font-size: 8px;
+    }
     #desktop {
         display: none;
     }
@@ -135,6 +162,9 @@ i.fi-line:hover {
     transition: color 0.5s;
     width: 25%;
     height: 20%;
+    }
+    .left {
+        display: none;
     }
 }
 @media (min-width: 426px) {
