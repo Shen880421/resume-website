@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,19 +14,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
     <script>
-    new WOW().init();
+        new WOW().init();
     </script>
 </head>
+
 <body>
     <main class="leftandright" id="desktop">
         <header class="left">
-            <nav class="icondisplay">
-                <section class="left_position">
-                    <img src="cafe.jpg" alt="陳明賢Shen的照片" class="photo1">
-                </section>
-                    <a href="https://www.instagram.com/ashen2250?igsh=bGl2eTFsZmk4MnRm" target="_blank"> 
+            <section class="left_position">
+                <img src="cafe.jpg" alt="陳明賢Shen的照片" class="photo1">
+            </section>
+            <section class="left_nav">
+                <nav class="icondisplay">
+                    <a href="https://www.instagram.com/ashen2250?igsh=bGl2eTFsZmk4MnRm" target="_blank">
                         <i class="fi fi-instagram"></i>
-                    </a> 
+                    </a>
 
                     <!-- Facebook -->
                     <a href="https://www.facebook.com/share/19gr892duj/" target="_blank">
@@ -36,11 +39,12 @@
                     <a href="https://line.me/ti/p/IcOQ5_X580" target="_blank">
                         <i class="fi fi-line"></i>
                     </a>
-            </nav>
-        </header> 
-        
+                </nav>
+            </section>
+        </header>
+
         <header class="right">
-            <section>
+            <section class="right_size">
                 <img src='ps3.png' alt="陳明賢Shen的照片" class="photo2">
             </section>
             <!-- <ul class="pages">
@@ -50,23 +54,40 @@
                 <li>轉職經歷</li>
             </ul> -->
             <section class="wow animate__animated animate__fadeIn" data-wow-duration="2s">
-                <h1 class="h1 info">基本資料</h1>
-                <ul class="basicinfo_list">
-                    <li class="basicinfo_info">出生年月日:088/04/21</li>
-                    <li class="basicinfo_info">年齡:26歲</li>
-                    <li class="basicinfo_info">電子信箱:solove5171@gmail.com</li>
-                    <li class="basicinfo_info">學歷:國立空中大學</li>
-                    <li class="basicinfo_info">連絡電話:0963616228</li>
-                </ul>
+                <h1 class="h1">基本資料</h1>
+                    <table class="basicinfo_table">
+                        <tbody class="tbody">
+                            <tr>
+                                <th>出生年月日</th>
+                                <td class="td">088/04/21</td>
+                            </tr>
+                            <tr>
+                                <th>年齡</th>
+                                <td class="td">26歲</td>
+                            </tr>
+                            <tr>
+                                <th>電子信箱</th>
+                                <td class="td">solove5171@gmail.com</td>
+                            </tr>
+                            <tr>
+                                <th>學歷</th>
+                                <td class="td">國立空中大學</td>
+                            </tr>
+                            <tr>
+                                <th>連絡電話</th>
+                                <td class="td">0963616228</td>
+                            </tr>
+                        </tbody>
+                    </table>
             </section>
             <section class="wow animate__animated animate__fadeIn" data-wow-duration="2s">
                 <h1 class="h1 ability">技能</h1>
                 <ul class="basicinfo_list">
-                    <li class="basicinfo_info">Python</li>
-                    <li class="basicinfo_info">HTML</li>
-                    <li class="basicinfo_info">Linux</li>
-                    <li class="basicinfo_info">MySQL</li>
-                    <li class="basicinfo_info">Photoshop</li>
+                    <li class="basicinfo_info skill">Python</li>
+                    <li class="basicinfo_info skill">HTML</li>
+                    <li class="basicinfo_info skill">Linux</li>
+                    <li class="basicinfo_info skill">MySQL</li>
+                    <li class="basicinfo_info skill">Photoshop</li>
                 </ul>
             </section>
             <section class="wow animate__animated animate__fadeIn" data-wow-duration="2s">
@@ -77,9 +98,11 @@
             </section>
             <section class="wow animate__animated animate__fadeIn" data-wow-duration="2s">
                 <h1 class="h1 personality">人格特質</h1>
+                    <div class="rollingtest">捲動測試</div>
             </section>
             <section class="wow animate__animated animate__fadeIn" data-wow-duration="2s">
                 <h1 class="h1 experience">轉職經歷</h1>
+                    <div class="rollingtest">捲動測試</div>
             </section>
         </header>
     </main>
@@ -93,32 +116,48 @@
                     <a href="https://www.instagram.com/ashen2250?igsh=bGl2eTFsZmk4MnRm" target="_blank"> 
                         <i class="fi fi-instagram icon"></i>
                     </a> 
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/share/19gr892duj/" target="_blank">
+                    <i class="fi fi-facebook icon"></i>
+                </a>
 
-                    <!-- Facebook -->
-                    <a href="https://www.facebook.com/share/19gr892duj/" target="_blank">
-                        <i class="fi fi-facebook icon"></i>
-                    </a>
-
-                    <!-- Line -->
-                    <a href="https://line.me/ti/p/IcOQ5_X580" target="_blank">
-                        <i class="fi fi-line icon"></i>
-                    </a>
+                <!-- Line -->
+                <a href="https://line.me/ti/p/IcOQ5_X580" target="_blank">
+                    <i class="fi fi-line icon"></i>
+                </a>
             </section>
-        </header> 
-        
+        </header>
+
         <header class="right">
             <section>
                 <img src='ps3.png' alt="陳明賢Shen的照片" class="photo2">
             </section>
             <section class="wow animate__animated animate__fadeIn" data-wow-duration="2s">
                 <h1 class="h1">基本資料</h1>
-                <ul class="basicinfo_list">
-                    <li class="basicinfo_info">出生年月日:088/04/21</li>
-                    <li class="basicinfo_info">年齡:26歲</li>
-                    <li class="basicinfo_info">電子信箱:solove5171@gmail.com</li>
-                    <li class="basicinfo_info">學歷:國立空中大學</li>
-                    <li class="basicinfo_info">連絡電話:0963616228</li>
-                </ul>
+                    <table class="basicinfo_table">
+                        <tbody>
+                            <tr>
+                                <th>出生年月日</th>
+                                <td class="td">088/04/21</td>
+                            </tr>
+                            <tr>
+                                <th>年齡</th>
+                                <td class="td">26歲</td>
+                            </tr>
+                            <tr>
+                                <th>電子信箱</th>
+                                <td class="td">solove5171@gmail.com</td>
+                            </tr>
+                            <tr>
+                                <th>學歷</th>
+                                <td class="td">國立空中大學</td>
+                            </tr>
+                            <tr>
+                                <th>連絡電話</th>
+                                <td class="td">0963616228</td>
+                            </tr>
+                        </tbody>
+                    </table>
             </section>
             <section class="wow animate__animated animate__fadeIn" data-wow-duration="2s">
                 <h1 class="h1">技能</h1>
@@ -138,11 +177,14 @@
             </section>
             <section class="wow animate__animated animate__fadeIn" data-wow-duration="2s">
                 <h1 class="h1">人格特質</h1>
+                    <div class="rollingtest">捲動測試</div>
             </section>
             <section class="wow animate__animated animate__fadeIn" data-wow-duration="2s">
                 <h1 class="h1">轉職經歷</h1>
+                    <div class="rollingtest">捲動測試</div>
             </section>
         </header>
     </main>
 </body>
+
 </html>
