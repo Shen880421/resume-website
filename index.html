@@ -107,9 +107,10 @@
         </header>
     </main>
     <main class="leftandright" id="mobile">
-        <button id="open"> open </button>
+        <button id="open" class="btndec"> &gt </button>
         <header class="left" id="left_nav">
             <section class="icondisplay">
+                <button id="close" class="btndec_close"> &lt </button>
                 <section class="left_position">
                     <img src="cafe.jpg" alt="陳明賢Shen的照片" class="photo1">
                 </section>
@@ -191,6 +192,13 @@
         open_btn.addEventListener('click', () => {
             console.log("clicked");
             left_open.classList.toggle("open");
+            open_btn.classList.add("open_btn_close");
+        })
+
+        const close_btn = document.getElementById("close");
+        close_btn.addEventListener('click', () => {
+            left_open.classList.toggle("open");
+             open_btn.classList.remove("open_btn_close");
         })
     </script>
 </body>
