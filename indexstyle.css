@@ -205,3 +205,6 @@ tr {
     }
     
 }
+.open {
+    display: block;
+}
