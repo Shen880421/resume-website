@@ -188,7 +188,9 @@ li.skill::before {
     /* .photo2 {
         width: 100vw;
     } */
-    
+    .nav_ul {
+        background-repeat: no-repeat;
+    }
     .left {
         display: none;
         
