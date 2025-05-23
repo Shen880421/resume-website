@@ -138,7 +138,7 @@
             <section>
                 <img src='ps3.png' alt="陳明賢Shen的照片" class="photo2">
             </section>
-            <section class="info wow animate__animated animate__fadeIn" data-wow-duration="2s">
+            <section class="info_m wow animate__animated animate__fadeIn" data-wow-duration="2s">
                 <h1 class="h1">基本資料</h1>
                 <table class="basicinfo_table">
                     <tbody>
@@ -165,7 +165,7 @@
                     </tbody>
                 </table>
             </section>
-            <section class="skill nav_close wow animate__animated animate__fadeIn" data-wow-duration="2s">
+            <section class="skill_m nav_close wow animate__animated animate__fadeIn" data-wow-duration="2s">
                 <h1 class="h1">技能</h1>
                 <ul class="basicinfo_list">
                     <li class="basicinfo_info">Python</li>
@@ -175,17 +175,17 @@
                     <li class="basicinfo_info">Photoshop</li>
                 </ul>
             </section>
-            <section class="portfolio nav_close wow animate__animated animate__fadeIn" data-wow-duration="2s">
+            <section class="portfolio_m nav_close wow animate__animated animate__fadeIn" data-wow-duration="2s">
                 <h1 class="h1">作品集</h1>
             </section>
-            <section class="hobby nav_close wow animate__animated animate__fadeIn" data-wow-duration="2s">
+            <section class="hobby_m nav_close wow animate__animated animate__fadeIn" data-wow-duration="2s">
                 <h1 class="h1">興趣</h1>
             </section>
-            <section class="personality nav_close wow animate__animated animate__fadeIn" data-wow-duration="2s">
+            <section class="personality_m nav_close wow animate__animated animate__fadeIn" data-wow-duration="2s">
                 <h1 class="h1">人格特質</h1>
                 <div class="rollingtest">捲動測試</div>
             </section>
-            <section class="experience nav_close wow animate__animated animate__fadeIn" data-wow-duration="2s">
+            <section class="experience_m nav_close wow animate__animated animate__fadeIn" data-wow-duration="2s">
                 <h1 class="h1">轉職經歷</h1>
                 <div class="rollingtest">捲動測試</div>
             </section>
@@ -197,12 +197,18 @@
         const hobbyandpersonality_btn = document.querySelector(".hobbyandpersonality_btn");
         const experience_btn = document.querySelector(".experience_btn");
 
-        const info = document.querySelectorAll(".info");
-        const skill = document.querySelectorAll(".skill");
-        const portfolio = document.querySelectorAll(".portfolio");
-        const hobby = document.querySelectorAll(".hobby");
-        const personality = document.querySelectorAll(".personality");
-        const experience = document.querySelectorAll(".experience");
+        const info = document.querySelector(".info");
+        const skill = document.querySelector(".skill");
+        const portfolio = document.querySelector(".portfolio");
+        const hobby = document.querySelector(".hobby");
+        const personality = document.querySelector(".personality");
+        const experience = document.querySelector(".experience");
+        const info_m = document.querySelector(".info_m");
+        const skill_m = document.querySelector(".skill_m");
+        const portfolio_m = document.querySelector(".portfolio_m");
+        const hobby_m = document.querySelector(".hobby_m");
+        const personality_m = document.querySelector(".personality_m");
+        const experience_m = document.querySelector(".experience_m");
 
 
         infoandskill_btn.addEventListener('click', () => {
@@ -212,6 +218,12 @@
             hobby.classList.add("nav_close");
             personality.classList.add("nav_close");
             experience.classList.add("nav_close");
+            info_m.classList.remove("nav_close");
+            skill_m.classList.remove("nav_close");
+            portfolio_m.classList.add("nav_close");
+            hobby_m.classList.add("nav_close");
+            personality_m.classList.add("nav_close");
+            experience_m.classList.add("nav_close");
         });
         portfolio_btn.addEventListener('click', () => {
             info.classList.add("nav_close");
@@ -220,6 +232,12 @@
             hobby.classList.add("nav_close");
             personality.classList.add("nav_close");
             experience.classList.add("nav_close");
+            info_m.classList.add("nav_close");
+            skill_m.classList.add("nav_close");
+            portfolio_m.classList.remove("nav_close");
+            hobby_m.classList.add("nav_close");
+            personality_m.classList.add("nav_close");
+            experience_m.classList.add("nav_close");
         });
         hobbyandpersonality_btn.addEventListener('click', () => {
             info.classList.add("nav_close");
@@ -228,6 +246,12 @@
             hobby.classList.remove("nav_close");
             personality.classList.remove("nav_close");
             experience.classList.add("nav_close");
+            info_m.classList.add("nav_close");
+            skill_m.classList.add("nav_close");
+            portfolio_m.classList.add("nav_close");
+            hobby_m.classList.remove("nav_close");
+            personality_m.classList.remove("nav_close");
+            experience_m.classList.add("nav_close");
         });
         experience_btn.addEventListener('click', () => {
             info.classList.add("nav_close");
@@ -236,6 +260,12 @@
             hobby.classList.add("nav_close");
             personality.classList.add("nav_close");
             experience.classList.remove("nav_close");
+            info_m.classList.add("nav_close");
+            skill_m.classList.add("nav_close");
+            portfolio_m.classList.add("nav_close");
+            hobby_m.classList.add("nav_close");
+            personality_m.classList.add("nav_close");
+            experience_m.classList.remove("nav_close");
         });
 
 
