@@ -190,6 +190,7 @@ tr {
     
     .left {
         display: none;
+        
     }
 }
 @media (min-width: 426px) {
@@ -223,9 +224,39 @@ tr {
     border-radius: 12px 1px 1px 12px;
     position: absolute;
     margin-left: 55px;
+    top: 0;
 
 }
 .btndec:hover {
     background-color: #f7bf9a;
     color: #6e4931;
+}
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOutLeft {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+}
+
+.animate-slide-in {
+  animation: slideInLeft 0.5s forwards;
+}
+
+.animate-slide-out {
+  animation: slideOutLeft 0.5s forwards;
 }

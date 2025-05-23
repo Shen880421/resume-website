@@ -107,8 +107,8 @@
         </header>
     </main>
     <main class="leftandright" id="mobile">
-        <button id="open" class="btndec"> &gt </button>
-        <header class="left" id="left_nav">
+        <button id="open" class="btndec wow animate__animated animate__fadeIn"> &gt </button>
+        <header class="left animate-slide-in" id="left_nav">
             <section class="icondisplay">
                 <button id="close" class="btndec_close"> &lt </button>
                 <section class="left_position">
@@ -189,17 +189,25 @@
     <script>
         const open_btn = document.getElementById("open");
         const left_open = document.getElementById("left_nav");
-        open_btn.addEventListener('click', () => {
-            console.log("clicked");
-            left_open.classList.toggle("open");
-            open_btn.classList.add("open_btn_close");
-        })
-
         const close_btn = document.getElementById("close");
+
+        open_btn.addEventListener('click', () => {
+            left_open.classList.remove("animate-slide-out");
+            left_open.classList.add("open", "animate-slide-in");
+            open_btn.classList.add("open_btn_close");
+        });
+
         close_btn.addEventListener('click', () => {
-            left_open.classList.toggle("open");
-             open_btn.classList.remove("open_btn_close");
-        })
+            left_open.classList.remove("animate-slide-in");
+            left_open.classList.add("animate-slide-out");
+            setTimeout(() => {
+                open_btn.classList.remove("open_btn_close");
+            }, 500);
+
+            setTimeout(() => {
+                left_open.classList.remove("open");
+            }, 500); // 與動畫時長相同
+        });
     </script>
 </body>
 
