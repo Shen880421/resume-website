@@ -270,7 +270,7 @@ li.skill::before {
     box-shadow: #5c3d29 1px 1px 5px 1px;
     border-radius: 1px 12px 12px 1px;
     position: absolute;
-    top: -76px;
+    
 }
 
 .btndec_close {
@@ -282,7 +282,7 @@ li.skill::before {
     border-radius: 12px 1px 1px 12px;
     position: absolute;
     margin-left: 55px;
-    top: 0;
+    top: 75px;
 
 }
 
