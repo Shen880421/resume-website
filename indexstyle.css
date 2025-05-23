@@ -260,3 +260,6 @@ tr {
 .animate-slide-out {
   animation: slideOutLeft 0.5s forwards;
 }
+.nav_ul {
+    display: flex;
+}
