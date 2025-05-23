@@ -228,8 +228,9 @@ li.skill::before {
         width: 50px !important;
     }
     .nav_ul {
-        background-image: url(ps3-1.png);
+        background-image: url(ps3.png);
         background-repeat: round;
+        height: 15vh;
     }
 }
 
@@ -241,6 +242,7 @@ li.skill::before {
     .nav_ul {
         background-image: url(ps3.png);
         background-repeat: round;
+        height: 30vh;
     }
 
 }
@@ -261,7 +263,7 @@ li.skill::before {
     box-shadow: #5c3d29 1px 1px 5px 1px;
     border-radius: 1px 12px 12px 1px;
     position: absolute;
-
+    top: -76px;
 }
 
 .btndec_close {
@@ -317,7 +319,7 @@ li.skill::before {
 .nav_ul {
     display: flex;
     width: 100vw;
-    height: 30vh;
+    
     background-color: #987b6b;
 
     justify-content: center;
