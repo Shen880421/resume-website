@@ -262,4 +262,9 @@ tr {
 }
 .nav_ul {
     display: flex;
+    width: 100vw;
+    background-color: #c57300;
+}
+.nav_close {
+    display: none;
 }
