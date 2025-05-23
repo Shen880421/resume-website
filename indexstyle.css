@@ -146,7 +146,6 @@ i.fi-line:hover {
     flex-wrap: wrap;
     gap: 10px;
     width: 100%;
-
 }
 
 tr.info {
@@ -224,8 +223,8 @@ li.skill::before {
     }
 
     .nav_btn {
-        font-size: 8px ;
-        width: 50px ;
+        font-size: 8px;
+        width: 50px;
         height: 30px;
     }
 
@@ -233,6 +232,46 @@ li.skill::before {
         background-image: url(ps3.png);
         background-repeat: round;
         height: 15vh;
+    }
+
+    article.context {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .other_mobile {
+        margin: 10px;
+    }
+
+    td.other {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    tr.other {
+        margin-left: 20px !important;
+    }
+
+    .info_m {
+        padding-left: 10px;
+    }
+    tr.bs_m {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    th.bs_m {
+        width: 200px;
+        font-size: clamp(8px, 5vw, 24px);
+        background-color: #f0f0f062;
+        border-radius: 15px;
+        box-shadow: 5px 3px 8px 4px #c48f6dc2;
+        margin-top: 10px;
+    }
+    td.bs_m {
+        align-content: center;
+        margin-top: 10px;
+        width: 200px;
+        text-align: center;
     }
 }
 
@@ -270,7 +309,7 @@ li.skill::before {
     box-shadow: #5c3d29 1px 1px 5px 1px;
     border-radius: 1px 12px 12px 1px;
     position: absolute;
-    
+
 }
 
 .btndec_close {
@@ -363,10 +402,12 @@ li.skill::before {
     gap: 10px;
     font-size: 2rem;
 }
+
 p {
     margin-bottom: 30px;
     font-size: 1.5rem;
 }
+
 ul.text {
     margin-bottom: 10px;
     font-size: 1.5rem;
@@ -376,19 +417,23 @@ th.other {
     margin: 20px;
     font-size: 2rem;
 }
+
 td.other {
     margin-bottom: 20px;
     margin-left: 30px;
     margin-right: 30px;
 }
+
 tr.other {
     margin: 10px;
     width: 80%;
 }
+
 em {
     font-size: 2.5rem;
     font-weight: bold;
 }
+
 .dessert {
     display: flex;
 }
