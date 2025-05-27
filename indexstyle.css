@@ -131,15 +131,14 @@ i.fi-line:hover {
     height: fit-content;
 }
 
-tbody {
+.tbody {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     width: 100%;
-
 }
 
-tr {
+tr.info {
     display: flex;
     flex-direction: column;
     font-size: clamp(8px, 5vw, 24px);
@@ -149,7 +148,7 @@ tr {
     box-shadow: 5px 3px 8px 4px #c48f6dc2;
 }
 
-.td {
+td.td {
     padding-left: 30px;
     padding-right: 30px;
 }
@@ -212,35 +211,7 @@ li.skill::before {
         background-repeat: round;
         height: 15vh;
     }
-
-    nav {
-        background-color: #F2E1C9;
-    }
-
-    .basicinfo_info {
-        width: fit-content;
-        display: block;
-        height: fit-content;
-        font-size: clamp(8px, 5vw, 24px);
-        align-items: center;
-        background-color: #f0f0f062;
-        border-radius: 15px;
-        padding: 10px;
-        box-shadow: 5px 3px 8px 4px #c48f6dc2;
-    }
-
-    .basicinfo_list {
-        flex-basis: 0;
-        display: flex;
-        flex-wrap: wrap;
-        /* 自動換行（如果寬度不夠） */
-        gap: 10px;
-        /* 元素間距 */
-        justify-content: flex-start;
-        padding-left: 10%;
-    }
 }
-
 
 @media (min-width: 426px) {
     #mobile {
@@ -399,6 +370,43 @@ li.skill::before {
     padding: 50px;
     border-radius: 10px;
     background-color: #f5dbb7;
+    gap: 10px;
+    font-size: 2rem;
+}
+
+p {
+    margin-bottom: 30px;
+    font-size: 1.5rem;
+}
+
+ul.text {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+th.other {
+    margin: 20px;
+    font-size: 2rem;
+}
+
+td.other {
+    margin-bottom: 20px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+tr.other {
+    margin: 10px;
+    width: 80%;
+}
+
+em {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.dessert {
+    display: flex;
 }
 
 .progress-bar.custom-color {
