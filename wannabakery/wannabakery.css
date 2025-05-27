@@ -24,3 +24,14 @@ div.bakeryname {
 div.nav_logoname {
     align-items: center;
 }
+div.btn_customcolor {
+    background-color: #E0E4E4;
+}
+div.btn_customcolor:hover {
+    background-color: red !important;
+}
+div.nav_button {
+    display: flex;
+    justify-content:end;
+    align-self: end;
+}
