@@ -12,10 +12,15 @@ img.logo_size {
     width: 100%;
     height: auto;
     border-radius: 30%;
+    
 }
 
 div.bakeryname {
-    font-size: 5rem;
+    font-size: clamp(0.5rem, 5vw, 8rem);
     font-family: "Just Me Again Down Here", cursive;
     color: #A3B9D2; 
+    margin-top: 20px;
 } 
+div.nav_logoname {
+    align-items: center;
+}
