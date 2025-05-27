@@ -252,9 +252,11 @@ li.skill::before {
     tr.bs_m {
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
     }
     th.bs_m {
-        width: 200px;
+        width: 150px;
+        text-align: center;
         font-size: clamp(8px, 5vw, 24px);
         background-color: #f0f0f062;
         border-radius: 15px;
@@ -266,6 +268,9 @@ li.skill::before {
         margin-top: 10px;
         width: 200px;
         text-align: center;
+        background-color: #f0f0f062;
+        border-radius: 15px;
+        /* box-shadow: 5px 3px 8px 4px #c48f6dc2; */
     }
 }
 
