@@ -437,6 +437,7 @@ li.skill::before {
     background-color: #f5dbb7;
     gap: 10px;
     font-size: 2rem;
+    width: 100%;
 }
 
 p {
@@ -464,15 +465,27 @@ tr.other {
     margin: 10px;
     width: 80%;
 }
+tr.other_h {
+    width: fit-content;
+    margin: 10px;
+}
 
 em {
     font-size: 2.5rem;
     font-weight: bold;
 }
 
-.dessert {
+tbody.dessert {
     display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    table-layout: fixed; /* optional, 可使欄寬平均分配 */
 }
+table.table_hobby {
+    width: 100%;
+    table-layout: fixed; /* optional, 可使欄寬平均分配 */
+}
+
 
 .progress-bar.custom-color {
     background-color: #6e4931;
