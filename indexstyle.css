@@ -153,7 +153,9 @@ li.skill::before {
     content: url(check_icon_16px.png);
     padding-right: 5px;
 }
-
+nav.bg {
+    background-color: #F2E1C9;
+}
 
 
 @media (max-width: 425px) {
@@ -254,6 +256,7 @@ li.skill::before {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+        margin-left: -20px;
     }
     th.bs_m {
         width: 150px;
