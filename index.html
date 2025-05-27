@@ -5,13 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>陳明賢Shen的個人網站</title>
-    <link rel="stylesheet" href="indexstyle.css">
     <link rel="stylesheet" href="CSS_reset.css">
+    <link rel="stylesheet" href="indexstyle.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fontisto@latest/css/fontisto/fontisto.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+Mono+TC&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
     <script>
         new WOW().init();
@@ -19,7 +21,7 @@
 </head>
 
 <body>
-    <nav>
+    <nav class="bg">
         <table>
             <ul class="nav_ul">
                 <li><button class="nav_btn infoandskill_btn">基本資料與技能</button></li>
@@ -87,11 +89,48 @@
             <section class="skill wow animate__animated animate__fadeIn" data-wow-duration="2s">
                 <h1 class="h1 ability">技能</h1>
                 <ul class="basicinfo_list">
-                    <li class="basicinfo_info skill">Python</li>
-                    <li class="basicinfo_info skill">HTML</li>
-                    <li class="basicinfo_info skill">Linux</li>
-                    <li class="basicinfo_info skill">MySQL</li>
-                    <li class="basicinfo_info skill">Photoshop</li>
+                    <li class="basicinfo_info skill">
+                        Python
+                        <div class="progress">
+                            <div id="progress1" class="progress-bar custom-color" role="progressbar" style="width: 0%">10%</div>
+                        </div>
+                    </li>
+                    <li class="basicinfo_info skill">
+                        HTML
+                        <div class="progress">
+                            <div id="progress2" class="progress-bar custom-color" role="progressbar" style="width: 0%">80%</div>
+                        </div>
+                    </li>
+                    <li class="basicinfo_info skill">
+                        CSS
+                        <div class="progress">
+                            <div id="progress3" class="progress-bar custom-color" role="progressbar" style="width: 0%">80%</div>
+                        </div>
+                    </li>
+                    <li class="basicinfo_info skill">
+                        Bootstrap
+                        <div class="progress">
+                            <div id="progress4" class="progress-bar custom-color" role="progressbar" style="width: 0%">60%</div>
+                        </div>
+                    </li>
+                    <li class="basicinfo_info skill">
+                        Linux
+                        <div class="progress">
+                            <div id="progress5" class="progress-bar custom-color" role="progressbar" style="width: 0%">80%</div>
+                        </div>
+                    </li>
+                    <li class="basicinfo_info skill">
+                        MySQL
+                        <div class="progress">
+                            <div id="progress6" class="progress-bar custom-color" role="progressbar" style="width: 0%">50%</div>
+                        </div>
+                    </li>
+                    <li class="basicinfo_info skill">
+                        Photoshop
+                        <div class="progress">
+                            <div id="progress7" class="progress-bar custom-color" role="progressbar" style="width: 0%">80%</div>
+                        </div>
+                    </li>
                 </ul>
             </section>
             <section class="portfolio nav_close wow animate__animated animate__fadeIn" data-wow-duration="2s">
@@ -167,14 +206,51 @@
                     </tbody>
                 </table>
             </section>
-            <section class="skill_m nav_close wow animate__animated animate__fadeIn" data-wow-duration="2s">
+            <section class="skill_m  wow animate__animated animate__fadeIn" data-wow-duration="2s">
                 <h1 class="h1">技能</h1>
                 <ul class="basicinfo_list">
-                    <li class="basicinfo_info">Python</li>
-                    <li class="basicinfo_info">HTML</li>
-                    <li class="basicinfo_info">Linux</li>
-                    <li class="basicinfo_info">MySQL</li>
-                    <li class="basicinfo_info">Photoshop</li>
+                    <li class="basicinfo_info skill">
+                        Python
+                        <div class="progress">
+                            <div id="progress1" class="progress-bar custom-color" role="progressbar" style="width: 0%">10%</div>
+                        </div>
+                    </li>
+                    <li class="basicinfo_info skill">
+                        HTML
+                        <div class="progress">
+                            <div id="progress2" class="progress-bar custom-color" role="progressbar" style="width: 0%">80%</div>
+                        </div>
+                    </li>
+                    <li class="basicinfo_info skill">
+                        CSS
+                        <div class="progress">
+                            <div id="progress3" class="progress-bar custom-color" role="progressbar" style="width: 0%">80%</div>
+                        </div>
+                    </li>
+                    <li class="basicinfo_info skill">
+                        Bootstrap
+                        <div class="progress">
+                            <div id="progress4" class="progress-bar custom-color" role="progressbar" style="width: 0%">60%</div>
+                        </div>
+                    </li>
+                    <li class="basicinfo_info skill">
+                        Linux
+                        <div class="progress">
+                            <div id="progress5" class="progress-bar custom-color" role="progressbar" style="width: 0%">80%</div>
+                        </div>
+                    </li>
+                    <li class="basicinfo_info skill">
+                        MySQL
+                        <div class="progress">
+                            <div id="progress6" class="progress-bar custom-color" role="progressbar" style="width: 0%">50%</div>
+                        </div>
+                    </li>
+                    <li class="basicinfo_info skill">
+                        Photoshop
+                        <div class="progress">
+                            <div id="progress7" class="progress-bar custom-color" role="progressbar" style="width: 0%">80%</div>
+                        </div>
+                    </li>
                 </ul>
             </section>
             <section class="portfolio_m nav_close wow animate__animated animate__fadeIn" data-wow-duration="2s">
@@ -295,6 +371,33 @@
             }, 500); // 與動畫時長相同
         });
     </script>
+    <script>
+        function animateProgress(id, targetPercent, speed = 25) {
+            let bar = document.getElementById(id);
+            let current = 0;
+            let interval = setInterval(() => {
+                if (current >= targetPercent) {
+                    clearInterval(interval);
+                } else {
+                    current++;
+                    bar.style.width = current + "%";
+                    bar.innerText = current + "%";
+                }
+            }, speed);
+        }
+
+        // 開始動畫，設定不同的目標百分比
+        animateProgress("progress1", 10); // 停在 10%
+        animateProgress("progress2", 80); // 停在 80%
+        animateProgress("progress3", 80); // 停在 80%
+        animateProgress("progress4", 70); // 停在 70%
+        animateProgress("progress5", 80); // 停在 80%
+        animateProgress("progress6", 50); // 停在 50%
+        animateProgress("progress7", 75); // 停在 75%
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
