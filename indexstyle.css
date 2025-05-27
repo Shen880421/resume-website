@@ -24,8 +24,8 @@ html, body {
 .leftandright {
     display: block;
     width: 100%;
-
     position: relative;
+    background-color: #F2E1C9;
 }
 
 .left {
