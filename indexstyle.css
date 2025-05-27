@@ -70,10 +70,6 @@ section.left_nav {
     margin: 20px;
 }
 
-.h1::before {
-    content: url(h1_icon_16px.png);
-
-}
 
 .icondisplay {
     display: flex;
