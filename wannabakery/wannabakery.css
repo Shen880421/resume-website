@@ -51,6 +51,8 @@ div.dess_card {
     background-color: #DDE6EB;
     padding-top: 10px;
 }
-div.recom_section {
+div.recom_section_dessert {
     justify-content: space-around;
+    margin-left: 0px;
 }
+
