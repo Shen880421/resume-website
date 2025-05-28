@@ -3,6 +3,11 @@
     font-weight: 400;
     font-style: normal;
 }
+.lxgw-wenkai-tc-regular {
+  font-family: "LXGW WenKai TC", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
 
 nav.nav_top {
     background-color: #E0E4E4;
@@ -27,11 +32,16 @@ div.nav_logoname {
 div.btn_customcolor {
     background-color: #E0E4E4;
 }
-div.btn_customcolor:hover {
-    background-color: red !important;
+button.btn_customcolor:hover {
+    background-color: #B6C4CE ;
 }
 div.nav_button {
     display: flex;
     justify-content:end;
     align-self: end;
+}
+h5.bannerslogan {
+    font-size: 2rem;
+    color: #2F3B50;
+    font-family: "LXGW WenKai TC", cursive;
 }
