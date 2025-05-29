@@ -46,6 +46,7 @@ h5.bannerslogan {
     font-size: 2rem;
     color: #2F3B50;
     font-family: "LXGW WenKai TC", cursive;
+    text-shadow: 1px 1px 3px #E0E4E4;
 }
 div.dess_card {
     background-color: #DDE6EB;
