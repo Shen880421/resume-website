@@ -39,8 +39,9 @@ div.bakeryname {
 div.nav_logoname {
     align-items: center;
 }
-div.btn_customcolor {
+button.btn_customcolor {
     background-color: #E0E4E4;
+    font-size: clamp(0.5rem, 2.5vw, 2rem);
 }
 button.btn_customcolor:hover {
     background-color: #B6C4CE ;
@@ -48,7 +49,7 @@ button.btn_customcolor:hover {
 div.nav_button {
     display: flex;
     justify-content:end;
-    align-self: end;
+    align-self:center;
 }
 h5.bannerslogan {
     font-size: 2rem;
