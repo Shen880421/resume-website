@@ -42,6 +42,7 @@ div.nav_logoname {
 button.btn_customcolor {
     background-color: #E0E4E4;
     font-size: clamp(0.5rem, 2.5vw, 2rem);
+    margin-left: 10px;
 }
 button.btn_customcolor:hover {
     background-color: #B6C4CE ;
