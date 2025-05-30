@@ -135,6 +135,15 @@ body {
         font-size: clamp(0.5rem, 2.5vw, 5rem);
         margin-left: 10px;
     }
+    button.btn_customcolor {
+        background-color: #DDEBE5;
+    }
+    button.btn_customcolor:hover {
+        background-color: #E7D9D7;
+    }
+    div.mint {
+        background-color: #DDEBE5;
+    }
 
     a.btn_customcolor:hover {
         background-color: #B6C4CE;
