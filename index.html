@@ -23,17 +23,15 @@
 
 <body>
     <nav class="bg">
-        <div class="sayhi">
-            Hi!     I'm Shen.
-        </div>
-        <table>
-            <ul class="nav_ul">
-                <li><button class="nav_btn infoandskill_btn">基本資料與技能</button></li>
-                <li><button class="nav_btn portfolio_btn">作品集</button></li>
-                <li><button class="nav_btn hobbyandpersonality_btn">興趣與人格特質</button></li>
-                <li><button class="nav_btn experience_btn">轉職經歷</button></li>
-            </ul>
-        </table>
+        <section class="nav_section">
+            <div class="sayhi">
+                Hi! I'm Shen.
+            </div>
+            <button class="nav_btn infoandskill_btn">基本資料與技能</button>
+            <button class="nav_btn portfolio_btn">作品集</button>
+            <button class="nav_btn hobbyandpersonality_btn">興趣與人格特質</button>
+            <button class="nav_btn experience_btn">轉職經歷</button>
+        </section>
     </nav>
     <main class="leftandright" id="desktop">
         <header class="left">
@@ -60,10 +58,7 @@
         </header>
 
         <header class="right">
-            <!-- <section class="right_size">
-                <img src='ps3.png' alt="陳明賢Shen的照片" class="photo2">
-            </section> -->
-            <section class="info wow animate__animated animate__fadeIn" data-wow-duration="2s">
+            <section class="info wow animate__animated animate__fadeIn section_layout" data-wow-duration="2s">
                 <h1 class="h1">基本資料</h1>
                 <table class="basicinfo_table">
                     <tbody class="tbody">
@@ -94,7 +89,7 @@
                     </tbody>
                 </table>
             </section>
-            <section class="skill wow animate__animated animate__fadeIn" data-wow-duration="2s">
+            <section class="skill wow animate__animated animate__fadeIn section_layout" data-wow-duration="2s">
                 <h1 class="h1 ability">技能</h1>
                 <ul class="basicinfo_list">
                     <li class="basicinfo_info skill">
@@ -148,11 +143,13 @@
                     </li>
                 </ul>
             </section>
-            <section class="portfolio nav_close wow animate__animated animate__fadeIn" data-wow-duration="2s">
+            <section class="portfolio nav_close wow animate__animated animate__fadeIn section_layout"
+                data-wow-duration="2s">
                 <h1 class="h1 compliment">作品集</h1>
                 <p class="context">捲動測試</p>
             </section>
-            <section class="hobby nav_close wow animate__animated animate__fadeIn" data-wow-duration="2s">
+            <section class="hobby nav_close wow animate__animated animate__fadeIn section_layout"
+                data-wow-duration="2s">
                 <h1 class="h1 interest">興趣</h1>
                 <article class="context">
                     烘焙
@@ -178,7 +175,8 @@
                     </table>
                 </article>
             </section>
-            <section class="personality nav_close wow animate__animated animate__fadeIn" data-wow-duration="2s">
+            <section class="personality nav_close wow animate__animated animate__fadeIn section_layout"
+                data-wow-duration="2s">
                 <h1 class="h1 personality">人格特質</h1>
                 <article class="context">
                     <p>我的MBTI類型為: <em>INFJ</em></p>
@@ -208,7 +206,8 @@
                     </table>
                 </article>
             </section>
-            <section class="experience nav_close wow animate__animated animate__fadeIn" data-wow-duration="2s">
+            <section class="experience nav_close wow animate__animated animate__fadeIn section_layout"
+                data-wow-duration="2s">
                 <h1 class="h1 experience">轉職經歷</h1>
                 <article class="context">
                     <p>

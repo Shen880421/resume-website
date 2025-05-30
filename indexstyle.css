@@ -198,16 +198,19 @@ nav.bg {
 
     }
 
-    .nav_btn {
-        font-size: 8px;
-        width: 50px;
-        height: 30px;
-    }
-
-    .nav_ul {
+    .nav_section {
+        background-color: #987b6b;
         background-image: url(ps3.png);
         background-repeat: round;
         height: 15vh;
+        display: flex;
+        justify-content: end;
+        align-items: end;
+    }
+
+    .nav_btn {
+        font-size: clamp(0.5rem, 2vw, 4rem);
+        height: 30%;
     }
 
     .basicinfo_info {
@@ -302,14 +305,19 @@ nav.bg {
         display: none;
     }
 
-    .nav_ul {
+    .nav_section {
+        background-color: #987b6b;
         background-image: url(ps3.png);
-        background-repeat:round;
+        background-repeat: round;
         height: 30vh;
+        display: flex;
+        justify-content: end;
+        align-items: end;
     }
 
     .nav_btn {
-        font-size: clamp(0.5rem, 2vw, 1rem);
+        font-size: clamp(0.5rem, 2vw, 4rem);
+        height: 50%;
     }
 
     .basicinfo_info {
@@ -348,16 +356,10 @@ nav.bg {
         background-color: #F2E1C9;
     }
 
-    section {
-        margin-bottom: 30px;
-    }
-
     div.sayhi {
-        font-size: clamp(1rem, 10vw, 5rem);
-        position: absolute;
-        top: 8%;
-        left: 40%;
+        font-size: clamp(0.5rem, 6vw, 5rem);
         border: none;
+        margin-right: 10px;
         background-color: rgba(255, 255, 255, 0);
         color: #f7dbc9;
         text-shadow: 2px 2px 5px #987b6b;
@@ -370,17 +372,21 @@ nav.bg {
         display: none;
     }
 
-    .nav_ul {
+    .nav_section {
         background-color: #987b6b;
-        height: 10vh;
+        height: 15vh;
         display: flex;
         justify-content: end;
+        align-items: end;
     }
 
     .nav_btn {
         font-size: clamp(0.5rem, 2vw, 4rem);
+        height: 50%;
     }
-
+    .section_layout {
+        padding-top: 30px;
+    }
     .basicinfo_info {
         width: fit-content;
         display: block;
@@ -416,15 +422,9 @@ nav.bg {
     html {
         background-color: #F2E1C9;
     }
-
-    section {
-        margin-bottom: 30px;
-    }
-
     div.sayhi {
-        font-size: clamp(1rem, 10vw, 5rem);
-        position: absolute;
-        left: 40%;
+        font-size: clamp(1rem, 10vw, 8rem);
+        margin-right: 20%;
         border: none;
         background-color: rgba(255, 255, 255, 0);
         color: #f7dbc9;
