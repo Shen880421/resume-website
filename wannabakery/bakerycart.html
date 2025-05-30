@@ -144,7 +144,7 @@
                     <div class="form-check mt-1">
                         <input type="checkbox" class="form-check-input" id="warranty">
                         <label for="warranty" class="form-check-lable">禮盒包裝服務 +NT$100</label>
-                        <div class="text-end">甜點皆需冷凍/藏宅配 運費+NT$80</div>
+                        <div class="text-end">因產品皆為手工製作，每種限購一份。<br>甜點皆需冷凍/藏宅配 運費+NT$80</div>
                     </div>
                 </div>
             </div>
@@ -280,6 +280,10 @@
                             <div class="col-5 text-end" id="warrantyPrice">不需包裝</div>
                         </div>
                         <div class="row mt-2">
+                            <div class="col-7">運費</div>
+                            <div class="col-5 text-end" id="shippingfee">冷藏/凍運費NT$80</div>
+                        </div>
+                        <div class="row mt-2">
                             <div class="col-7">總計</div>
                             <div class="col-5 text-end" id="totalPrice">NT$0</div>
                         </div>
@@ -309,6 +313,7 @@
         let selectedcount = 0;
         let selectedproduct = [];
         let selectedProductPricels = [];
+        let shippingfee = 80;
         //點擊產品卡片時
         function selectProduct(cardEl, pid, price) {
 
@@ -397,7 +402,7 @@
                 document.getElementById("warrantyPrice").textContent = `NTD$${warrantyPrice}`;
             }
 
-            let totalPrice = selectedProducttotalPrice + warrantyPrice; //+ payment_fee;
+            let totalPrice = selectedProducttotalPrice + warrantyPrice + shippingfee; //+ payment_fee;
             document.getElementById("totalPrice").textContent = `NTD$${totalPrice}`;
 
         }
