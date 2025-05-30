@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         /*增加產品被選擇時的明顯狀態*/
-        .prod-card.selectd {
+        .prod-card.selected {
             border-color: crimson;
             background-color: rgba(163, 163, 163, 0.85);
         }
@@ -34,7 +34,7 @@
                     <div class="row row-cols-1 row-cols-md-3 ">
                         <!--產品1-->
                         <div class="col">
-                            <div class="card prod-card" onclick="selectProduct(this, 'product1', 450 )">
+                            <div class="card prod-card" onclick="selectProduct(this, 'product1', 450 )" id="whole_card1">
                                 <div class="card-body">
                                     <img class="card-img-top">
                                     <!--產品標題-->
@@ -58,7 +58,7 @@
                         </div>
                         <!--產品2-->
                         <div class="col">
-                            <div class="card prod-card" onclick="selectProduct(this, 'product2', 720 )">
+                            <div class="card prod-card" onclick="selectProduct(this, 'product2', 720 )" id="whole_card2">
                                 <div class="card-body">
                                     <img class="card-img-top">
                                     <!--產品標題-->
@@ -82,7 +82,7 @@
                         </div>
                         <!--產品3-->
                         <div class="col">
-                            <div class="card prod-card" onclick="selectProduct(this, 'product3', 600 )">
+                            <div class="card prod-card" onclick="selectProduct(this, 'product3', 600 )" id="whole_card3">
                                 <div class="card-body">
                                     <img class="card-img-top">
                                     <!--產品標題-->
@@ -277,19 +277,26 @@
     <script>
         //全域變數
         let selectedProductPrice = 0;
-
+        let selectedProducttotalPrice = 0;
+        //點擊產品卡片時
         function selectProduct(cardEl, pid, price) {
             
             //先還原每個產品卡片被選取的狀態顯示
-            document.querySelectorAll('.prod-card').forEach(card => {
-                card.classList.remove('selectd');
-            })
+            // document.querySelectorAll('.prod-card').forEach(card => {
+            //     card.classList.remove('selected');
+            // })
             //套用選取狀態
-            cardEl.classList.add("selectd");
+            
             if (document.getElementById(pid).checked != true) {
                 document.getElementById(pid).checked = true;
-            } else {
+                cardEl.classList.add("selected");
+                selectedProductPrice = price;
+                selectedProducttotalPrice += selectedProductPrice;
+            } else if (selectedProducttotalPrice > 0) {
                 document.getElementById(pid).checked = false;
+                cardEl.classList.remove("selected");
+                selectedProductPrice = price;
+                selectedProducttotalPrice -= selectedProductPrice;
             }
             //勾選對應的元素
             //更新訂單摘要中的產品名稱
@@ -299,11 +306,12 @@
             document.getElementById("productPrice").textContent = `NTD$${price}`;
             //選中商品應該更新總金額的計算
             //方案一
-            selectedProductPrice = price;
-            updateTotal();
+            // selectedProductPrice = price;
+            // selectedProducttotalPrice += selectedProductPrice;
             //方案2
             //updateTotal(price);
-
+            
+            updateTotal();
         }
         //計算總金額
         function updateTotal() {
@@ -327,7 +335,7 @@
             document.getElementById("warrantyPrice").textContent = `NTD$${warrantyPrice}`;
             document.getElementById("shippingPrice").textContent = `NTD$${payment_fee}`;
 
-            let totalPrice = selectedProductPrice + warrantyPrice + payment_fee;
+            let totalPrice = selectedProducttotalPrice + warrantyPrice + payment_fee;
             document.getElementById("totalPrice").textContent = `NTD$${totalPrice}`;
 
         }
@@ -338,8 +346,6 @@
         document.getElementById("warranty").addEventListener("change", updateTotal);
         // Example starter JavaScript for disabling form submissions if there are invalid fields
         (function () {
-            'use strict'
-
             // Fetch all the forms we want to apply custom Bootstrap validation styles to
             var forms = document.querySelectorAll('.needs-validation')
 
