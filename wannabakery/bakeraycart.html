@@ -34,7 +34,8 @@
                     <div class="row row-cols-1 row-cols-md-3 ">
                         <!--產品1-->
                         <div class="col">
-                            <div class="card prod-card" onclick="selectProduct(this, 'product1', 450 )" id="whole_card1">
+                            <div class="card prod-card" onclick="selectProduct(this, 'product1', 450 )"
+                                id="whole_card1">
                                 <div class="card-body">
                                     <img class="card-img-top">
                                     <!--產品標題-->
@@ -58,7 +59,8 @@
                         </div>
                         <!--產品2-->
                         <div class="col">
-                            <div class="card prod-card" onclick="selectProduct(this, 'product2', 720 )" id="whole_card2">
+                            <div class="card prod-card" onclick="selectProduct(this, 'product2', 720 )"
+                                id="whole_card2">
                                 <div class="card-body">
                                     <img class="card-img-top">
                                     <!--產品標題-->
@@ -82,7 +84,8 @@
                         </div>
                         <!--產品3-->
                         <div class="col">
-                            <div class="card prod-card" onclick="selectProduct(this, 'product3', 600 )" id="whole_card3">
+                            <div class="card prod-card" onclick="selectProduct(this, 'product3', 600 )"
+                                id="whole_card3">
                                 <div class="card-body">
                                     <img class="card-img-top">
                                     <!--產品標題-->
@@ -217,7 +220,7 @@
                             </div>
                             <div class="mt-4">
                                 <input type="radio" id="cod" name="paymentMethod" value="cod">
-                                <label for="cod" class="form-check-label">貨到付款(+NT$30)</label>
+                                <label for="cod" class="form-check-label">貨到付款</label>
                             </div>
                         </div>
                     </div>
@@ -233,23 +236,15 @@
                     <div class="order-summary">
                         <div class="row mt-2">
                             <div class="col-7">產品</div>
-                            <div class="col-5 text-end" id="productName">xyz</div>
+                            <div class="col-5 text-end" id="productName">尚未選擇商品</div>
                         </div>
                         <div class="row mt-2">
                             <div class="col-7">價格</div>
-                            <div class="col-5 text-end" id="productPrice">NT$0</div>
+                            <div class="col-5 text-end" id="productPrice">尚未選擇商品</div>
                         </div>
                         <div class="row mt-2">
-                            <div class="col-7">延長保固費用</div>
-                            <div class="col-5 text-end" id="warrantyPrice">NT$0</div>
-                        </div>
-                        <div class="row mt-2">
-                            <div class="col-7">運費</div>
-                            <div class="col-5 text-end" id="shippingPrice">NT$0</div>
-                        </div>
-                        <div class="row mt-2">
-                            <div class="col-7">付款手續費</div>
-                            <div class="col-5 text-end">NT$0</div>
+                            <div class="col-7">禮盒包裝服務</div>
+                            <div class="col-5 text-end" id="warrantyPrice">不需包裝</div>
                         </div>
                         <div class="row mt-2">
                             <div class="col-7">總計</div>
@@ -278,64 +273,98 @@
         //全域變數
         let selectedProductPrice = 0;
         let selectedProducttotalPrice = 0;
+        let selectedcount = 0;
+        let selectedproduct = [];
+        let selectedProductPricels = [];
         //點擊產品卡片時
         function selectProduct(cardEl, pid, price) {
-            
+
             //先還原每個產品卡片被選取的狀態顯示
             // document.querySelectorAll('.prod-card').forEach(card => {
             //     card.classList.remove('selected');
             // })
             //套用選取狀態
-            
             if (document.getElementById(pid).checked != true) {
                 document.getElementById(pid).checked = true;
                 cardEl.classList.add("selected");
                 selectedProductPrice = price;
                 selectedProducttotalPrice += selectedProductPrice;
-            } else if (selectedProducttotalPrice > 0) {
+                if (selectedcount <= 3) {
+                    selectedcount += 1;
+                    selectedproduct.push(document.getElementById(pid).value);
+                    selectedProductPricels.push(`NTD$${price}`);
+                    document.getElementById("productName").textContent = selectedproduct.join(" + ");
+                    document.getElementById("productPrice").textContent = selectedProductPricels.join(" + ");
+                }
+            } else if (document.getElementById(pid).checked = true) {
+                selectedcount -= 1;
                 document.getElementById(pid).checked = false;
                 cardEl.classList.remove("selected");
+                document.getElementById("productPrice").textContent = `NTD$0`;
                 selectedProductPrice = price;
                 selectedProducttotalPrice -= selectedProductPrice;
+
+                const productName = document.getElementById(pid).value;
+                selectedproduct = selectedproduct.filter(p => p !== productName);
+                selectedProductPricels = selectedProductPricels.filter(p => p !== `NTD$${price}`);
+
+                // 更新 UI 顯示
+                if (selectedproduct.length === 0) {
+                    document.getElementById("productName").textContent = "尚未選擇商品";
+                    document.getElementById("productPrice").textContent = "尚未選擇商品";
+                } else {
+                    document.getElementById("productName").textContent = selectedproduct.join(" + ");
+                    document.getElementById("productPrice").textContent = selectedProductPricels.join(" + ");
+                }
             }
             //勾選對應的元素
             //更新訂單摘要中的產品名稱
             //document.getElementById("productName").textContent = pid;
-            document.getElementById("productName").textContent = document.getElementById(pid).value;
+            // document.getElementById("productName").textContent = document.getElementById(pid).value;
             //更新訂單摘要中的產品金額
-            document.getElementById("productPrice").textContent = `NTD$${price}`;
+            // document.getElementById("productPrice").textContent = `NTD$${price}`;
             //選中商品應該更新總金額的計算
             //方案一
             // selectedProductPrice = price;
             // selectedProducttotalPrice += selectedProductPrice;
             //方案2
             //updateTotal(price);
-            
+
             updateTotal();
         }
+        //點選包裝禮物時
+        document.getElementById("warranty").addEventListener("click", () => {
+            if (selectedProductPrice > 0) {
+                updateTotal()
+            }
+        })
+
         //計算總金額
         function updateTotal() {
             let warranty = document.getElementById("warranty").checked;//直接取得保固的勾選狀態
             let warrantyPrice = warranty ? 100 : 0;// 設定保固外加金額
 
-            let payment_fee = 0;//選擇不同支付方式產生的附加費用
+            // let payment_fee = 0;//選擇不同支付方式產生的附加費用
             //計算貨到付款的金額
             //方案一
-            let paymentMethod = document.querySelector("input[name=paymentMethod]:checked");
-            payment_fee = paymentMethod.value == 'cod' ? 30 : 0;
-            payment_fee = paymentMethod.value == 'atm' ? 20 : 0;
+            // let paymentMethod = document.querySelector("input[name=paymentMethod]:checked");
+            // payment_fee = paymentMethod.value == 'cod' ? 30 : 0;
+            // payment_fee = paymentMethod.value == 'atm' ? 20 : 0;
 
             //方案2
-            if (document.getElementById("cod").checked) {
-                payment_fee = 30;
+            // if (document.getElementById("cod").checked) {
+            //     payment_fee = 30;
+            // }
+            // if (document.getElementById("atm").checked) {
+            //     payment_fee = 20;
+            // }
+            if (warrantyPrice == 0) {
+                document.getElementById("warrantyPrice").textContent = `不需包裝`;
+            } else {
+                document.getElementById("warrantyPrice").textContent = `NTD$${warrantyPrice}`;
             }
-            if (document.getElementById("atm").checked) {
-                payment_fee = 20;
-            }
-            document.getElementById("warrantyPrice").textContent = `NTD$${warrantyPrice}`;
-            document.getElementById("shippingPrice").textContent = `NTD$${payment_fee}`;
 
-            let totalPrice = selectedProducttotalPrice + warrantyPrice + payment_fee;
+            let totalPrice = selectedProducttotalPrice + warrantyPrice; //+ payment_fee;
             document.getElementById("totalPrice").textContent = `NTD$${totalPrice}`;
 
         }
