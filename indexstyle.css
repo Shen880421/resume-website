@@ -298,6 +298,18 @@ nav.bg {
         font-style: italic;
         font-family: "Shadows Into Light", cursive;
     }
+    div.portfolio_card {
+        border-radius: 30px;
+    }
+    img.portfolio_card_img {
+        border-bottom-right-radius: 30px;
+        border-bottom-left-radius: 30px;
+    }
+    div.card-custiltle {
+        background-color: #987b6b;
+        color: #f7dbc9;
+        padding: 0px;
+    }
 }
 
 @media (min-width: 426px) and (max-width:1799px) {
@@ -366,6 +378,18 @@ nav.bg {
         font-style: italic;
         font-family: "Shadows Into Light", cursive;
     }
+    div.portfolio_card {
+        border-radius: 30px;
+    }
+    img.portfolio_card_img {
+        border-bottom-right-radius: 30px;
+        border-bottom-left-radius: 30px;
+    }
+    div.card-custiltle {
+        background-color: #987b6b;
+        color: #f7dbc9;
+        padding: 0px;
+    }
 }
 @media (min-width: 1800px) {
     #mobile {
@@ -431,6 +455,18 @@ nav.bg {
         text-shadow: 2px 2px 5px #987b6b;
         font-style: italic;
         font-family: "Shadows Into Light", cursive;
+    }
+    div.portfolio_card {
+        border-radius: 30px;
+    }
+    img.portfolio_card_img {
+        border-bottom-right-radius: 30px;
+        border-bottom-left-radius: 30px;
+    }
+    div.card-custiltle {
+        background-color: #987b6b;
+        color: #f7dbc9;
+        padding: 0px;
     }
 }
 .open {
