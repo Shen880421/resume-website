@@ -18,6 +18,12 @@ body {
     #desktop {
         display: none;
     }
+    a.active {
+        background-color: #B6C4CE !important;
+    }
+    nav.nav_top {
+        background-color: #E0E4E4;
+    }
     div.nav_logoname {
         display: flex;
         align-items: center;
@@ -39,14 +45,14 @@ body {
         padding: 0px;
         margin-left: 10px;
     }
-    button.btn_customcolor {
+    a.btn_customcolor {
         background-color: #E0E4E4;
         margin-left: 10px;
         padding: 4px;
         font-size: 8px;
     }
 
-    button.btn_customcolor:hover {
+    a.btn_customcolor:hover {
         background-color: #B6C4CE;
     }
 
@@ -72,11 +78,22 @@ body {
         justify-content: space-around;
         margin-left: 0px;
     }
+    footer.footer {
+        background-color: #E0E4E4;
+        height: 150px;
+    }
+
+    div.placeholder {
+        height: 200px;
+    }
 }
 
 @media (min-width:426px) { /*平板以上*/
     #mobile {
         display: none;
+    }
+    a.active {
+        background-color: #B6C4CE !important;
     }
     nav.nav_top {
         background-color: #E0E4E4;
@@ -113,13 +130,13 @@ body {
         align-items: center;
     }
 
-    button.btn_customcolor {
+    a.btn_customcolor {
         background-color: #E0E4E4;
         font-size: clamp(0.5rem, 2.5vw, 5rem);
         margin-left: 10px;
     }
 
-    button.btn_customcolor:hover {
+    a.btn_customcolor:hover {
         background-color: #B6C4CE;
     }
 
