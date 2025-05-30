@@ -49,7 +49,7 @@
                                         <span>NT 450</span>
                                         <div class="form-check">
                                             <input type="checkbox" class="form-check-input" id="product1" name="product"
-                                                value="產品標題1">
+                                                value="焦糖奶油夾心餅乾">
                                             <label for="product1" class="form-check-label">選擇</label>
                                         </div>
                                     </div>
@@ -73,7 +73,7 @@
                                         <span>NT 720</span>
                                         <div class="form-check">
                                             <input type="checkbox" class="form-check-input" id="product2" name="product"
-                                                value="產品標題2">
+                                                value="橙香生巧馬卡龍">
                                             <label for="product2" class="form-check-label">選擇</label>
                                         </div>
                                     </div>
@@ -97,7 +97,7 @@
                                         <span>NT 600</span>
                                         <div class="form-check">
                                             <input type="checkbox" class="form-check-input" id="product3" name="product"
-                                                value="產品標題3">
+                                                value="香草生乳捲">
                                             <label for="product3" class="form-check-label">選擇</label>
                                         </div>
                                     </div>
@@ -279,9 +279,7 @@
         let selectedProductPrice = 0;
 
         function selectProduct(cardEl, pid, price) {
-            // console.log(cardEl);
-            // console.log(pid);
-            // console.log(price);
+            
             //先還原每個產品卡片被選取的狀態顯示
             document.querySelectorAll('.prod-card').forEach(card => {
                 card.classList.remove('selectd');
@@ -310,7 +308,7 @@
         //計算總金額
         function updateTotal() {
             let warranty = document.getElementById("warranty").checked;//直接取得保固的勾選狀態
-            let warrantyPrice = warranty ? 199 : 0;// 設定保固外加金額
+            let warrantyPrice = warranty ? 100 : 0;// 設定保固外加金額
 
             let payment_fee = 0;//選擇不同支付方式產生的附加費用
             //計算貨到付款的金額
@@ -330,7 +328,7 @@
             document.getElementById("shippingPrice").textContent = `NTD$${payment_fee}`;
 
             let totalPrice = selectedProductPrice + warrantyPrice + payment_fee;
-            document.getElementById("totalPrice").textContent = `NTD$${payment_fee}`;
+            document.getElementById("totalPrice").textContent = `NTD$${totalPrice}`;
 
         }
 
