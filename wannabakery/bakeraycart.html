@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,31 +8,33 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         /*增加產品被選擇時的明顯狀態*/
-        .prod-card.selectd{
-            border-color:crimson;
-            background-color: rgba(163, 163, 163 , 0.85);
+        .prod-card.selectd {
+            border-color: crimson;
+            background-color: rgba(163, 163, 163, 0.85);
         }
-        
     </style>
 </head>
+
 <body>
-    
+
     <form id="orderform" class="needs-validation" novalidate>
         <!--產品資訊區塊及頁面標題-->
         <section class="container mt-4">
             <h1 class="text-center">購物車</h1>
-            
+
             <div class="alert alert-info alert-dismissible fade show" role="alert">
-            <strong>提醒：</strong> 請確認以下欄位是否正確。
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="關閉"></button>
+                <strong>提醒：</strong> 請確認以下欄位是否正確。
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="關閉"></button>
             </div>
             <div class="card">
-                <div class="card-header"><h4>選擇產品</h4></div>
+                <div class="card-header">
+                    <h4>選擇產品</h4>
+                </div>
                 <div class="card-body">
                     <div class="row row-cols-1 row-cols-md-3 ">
                         <!--產品1-->
                         <div class="col">
-                            <div class="card prod-card" onclick="selectProduct(this, 'product1', 499 )">
+                            <div class="card prod-card" onclick="selectProduct(this, 'product1', 450 )">
                                 <div class="card-body">
                                     <img class="card-img-top">
                                     <!--產品標題-->
@@ -45,8 +48,8 @@
                                     <div class="d-flex justify-content-between align-items-center mb-2">
                                         <span>NT 450</span>
                                         <div class="form-check">
-                                            <input type="radio" class="form-check-input" id="product1" 
-                                            name="product" value="產品標題1">
+                                            <input type="checkbox" class="form-check-input" id="product1" name="product"
+                                                value="產品標題1">
                                             <label for="product1" class="form-check-label">選擇</label>
                                         </div>
                                     </div>
@@ -55,7 +58,7 @@
                         </div>
                         <!--產品2-->
                         <div class="col">
-                            <div class="card prod-card" onclick="selectProduct(this, 'product2', 699 )">
+                            <div class="card prod-card" onclick="selectProduct(this, 'product2', 720 )">
                                 <div class="card-body">
                                     <img class="card-img-top">
                                     <!--產品標題-->
@@ -69,7 +72,8 @@
                                     <div class="d-flex justify-content-between align-items-center mb-2">
                                         <span>NT 720</span>
                                         <div class="form-check">
-                                            <input type="radio" class="form-check-input" id="product2" name="product" value="產品標題2">
+                                            <input type="checkbox" class="form-check-input" id="product2" name="product"
+                                                value="產品標題2">
                                             <label for="product2" class="form-check-label">選擇</label>
                                         </div>
                                     </div>
@@ -78,7 +82,7 @@
                         </div>
                         <!--產品3-->
                         <div class="col">
-                            <div class="card prod-card" onclick="selectProduct(this, 'product3', 899 )" >
+                            <div class="card prod-card" onclick="selectProduct(this, 'product3', 600 )">
                                 <div class="card-body">
                                     <img class="card-img-top">
                                     <!--產品標題-->
@@ -92,7 +96,8 @@
                                     <div class="d-flex justify-content-between align-items-center mb-2">
                                         <span>NT 600</span>
                                         <div class="form-check">
-                                            <input type="radio" class="form-check-input" id="product3" name="product" value="產品標題3">
+                                            <input type="checkbox" class="form-check-input" id="product3" name="product"
+                                                value="產品標題3">
                                             <label for="product3" class="form-check-label">選擇</label>
                                         </div>
                                     </div>
@@ -101,9 +106,9 @@
                         </div>
                     </div>
                     <div class="form-check mt-1">
-                        <input type="checkbox" class="form-check-input" id="warranty" >
-                        <label for="warranty" class="form-check-lable">禮盒包裝服務  +NT$100</label>
-                        <div class="text-end">甜點皆需冷凍/藏宅配  運費+NT$80</div>
+                        <input type="checkbox" class="form-check-input" id="warranty">
+                        <label for="warranty" class="form-check-lable">禮盒包裝服務 +NT$100</label>
+                        <div class="text-end">甜點皆需冷凍/藏宅配 運費+NT$80</div>
                     </div>
                 </div>
             </div>
@@ -130,7 +135,7 @@
                                     請輸入您的email
                                 </div>
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -140,30 +145,25 @@
                         <div class="card-body">
                             <div class="city-div">
                                 <label for="ccity" class="form-check-label">縣市</label>
-                                <select class="form-select" id="ccity" name="ccity" >
-                                    <option value="none">---請選擇---</option>
-                                    <option value="台北市">台北市</option>
-                                    <option value="新北市">新北市</option>
-                                    <option value="桃園市">桃園市</option>
-                                    <option value="台中市">台中市</option>
+                                <select class="form-select" id="ccity" name="ccity" onchange="updateDistricts()"
+                                    required>
+                                    <option value="">---請選擇---</option>
                                 </select>
-                                <div class="invalid-feedback">
-                                    請選擇縣市
-                                </div>
+                                <div class="invalid-feedback">請選擇縣市</div>
                             </div>
+
                             <div class="district-div mt-2">
                                 <label for="cdistrict" class="form-check-label">行政區域</label>
-                                <input id="cdistrict" name="cdistrict" class="form-control">
-                                <div class="invalid-feedback">
-                                    請輸入您的行政區域
-                                </div>
+                                <select id="cdistrict" name="cdistrict" class="form-select" required>
+                                    <option value="">---請先選擇縣市---</option>
+                                </select>
+                                <div class="invalid-feedback">請選擇行政區</div>
                             </div>
+
                             <div class="caddr-div mt-2">
                                 <label for="caddr" class="form-check-label">地址</label>
                                 <input id="caddr" name="caddr" class="form-control" required>
-                                <div class="invalid-feedback">
-                                    請輸入您的地址路名門牌
-                                </div>
+                                <div class="invalid-feedback">請輸入您的地址路名門牌</div>
                             </div>
                         </div>
                     </div>
@@ -179,25 +179,28 @@
                         <div class="col-12 col-md-6">
                             <!--信用卡支付工具-->
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="paymentMethod" id="creditcard" value="creditcard">
+                                <input class="form-check-input" type="radio" name="paymentMethod" id="creditcard"
+                                    value="creditcard">
                                 <label class="form-check-label" for="creditcard">信用卡/Debit卡</label>
                             </div>
                             <div class="cardnumber-info">
-                                <label >卡號</label>
-                                <input type="text" class="form-control" id="cardNumber" name="cardNumber" placeholder="xxxx xxxx xxxx xxxx">
+                                <label>卡號</label>
+                                <input type="text" class="form-control" id="cardNumber" name="cardNumber"
+                                    placeholder="xxxx xxxx xxxx xxxx">
                             </div>
                             <div class="card-info mt-4">
                                 <div class="row">
                                     <div class="col-12 col-md-6">
                                         <label for="exDate" class="form-label">到期月/年</label>
-                                        <input type="text" class="form-control"  id="exDate" name="exDate" placeholder="MM/YY">
+                                        <input type="text" class="form-control" id="exDate" name="exDate"
+                                            placeholder="MM/YY">
                                         <div class="invalid-feedback">
                                             信用卡卡號需要輸入
                                         </div>
                                     </div>
                                     <div class="col-12 col-md-6">
                                         <label for="cvv" class="form-label">cvv</label>
-                                        <input class="form-control" type="text" id="cvv" name="cvv" >
+                                        <input class="form-control" type="text" id="cvv" name="cvv">
                                     </div>
                                 </div>
                             </div>
@@ -264,8 +267,8 @@
                         <button type="submit" class="btn btn-primary btn-lg">結帳</button>
                     </div>
                 </div>
-                
-                </div>
+
+            </div>
             </div>
         </section>
 
@@ -275,17 +278,22 @@
         //全域變數
         let selectedProductPrice = 0;
 
-        function selectProduct(cardEl, pid, price){
+        function selectProduct(cardEl, pid, price) {
             // console.log(cardEl);
             // console.log(pid);
             // console.log(price);
             //先還原每個產品卡片被選取的狀態顯示
-            document.querySelectorAll('.prod-card').forEach(card =>{
+            document.querySelectorAll('.prod-card').forEach(card => {
                 card.classList.remove('selectd');
             })
             //套用選取狀態
             cardEl.classList.add("selectd");
-            document.getElementById(pid).checked = true;//勾選對應的元素
+            if (document.getElementById(pid).checked != true) {
+                document.getElementById(pid).checked = true;
+            } else {
+                document.getElementById(pid).checked = false;
+            }
+            //勾選對應的元素
             //更新訂單摘要中的產品名稱
             //document.getElementById("productName").textContent = pid;
             document.getElementById("productName").textContent = document.getElementById(pid).value;
@@ -300,22 +308,22 @@
 
         }
         //計算總金額
-        function updateTotal(){
-            let warranty  = document.getElementById("warranty").checked;//直接取得保固的勾選狀態
-            let warrantyPrice = warranty? 199:0;// 設定保固外加金額
+        function updateTotal() {
+            let warranty = document.getElementById("warranty").checked;//直接取得保固的勾選狀態
+            let warrantyPrice = warranty ? 199 : 0;// 設定保固外加金額
 
             let payment_fee = 0;//選擇不同支付方式產生的附加費用
             //計算貨到付款的金額
             //方案一
             let paymentMethod = document.querySelector("input[name=paymentMethod]:checked");
-            payment_fee = paymentMethod.value == 'cod' ? 30:0;
-            payment_fee = paymentMethod.value == 'atm' ? 20:0;
+            payment_fee = paymentMethod.value == 'cod' ? 30 : 0;
+            payment_fee = paymentMethod.value == 'atm' ? 20 : 0;
 
             //方案2
-            if(document.getElementById("cod").checked){
+            if (document.getElementById("cod").checked) {
                 payment_fee = 30;
             }
-            if(document.getElementById("atm").checked){
+            if (document.getElementById("atm").checked) {
                 payment_fee = 20;
             }
             document.getElementById("warrantyPrice").textContent = `NTD$${warrantyPrice}`;
@@ -325,35 +333,84 @@
             document.getElementById("totalPrice").textContent = `NTD$${payment_fee}`;
 
         }
-        
-        document.querySelectorAll("input[name=paymentMethod]:checked").forEach(obj =>{
+
+        document.querySelectorAll("input[name=paymentMethod]:checked").forEach(obj => {
             obj.addEventListener("change", updateTotal);
         })
         document.getElementById("warranty").addEventListener("change", updateTotal);
         // Example starter JavaScript for disabling form submissions if there are invalid fields
         (function () {
-        'use strict'
+            'use strict'
 
-        // Fetch all the forms we want to apply custom Bootstrap validation styles to
-        var forms = document.querySelectorAll('.needs-validation')
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.querySelectorAll('.needs-validation')
 
-        // Loop over them and prevent submission
-        Array.prototype.slice.call(forms)
-            .forEach(function (form) {
-            form.addEventListener('submit', function (event) {
-                if (!form.checkValidity()) {
-                    //如果表單透過html5原生驗証失敗的情況下
-                    event.preventDefault();
-                    event.stopPropagation();
-                } else {
-                    //如果表單透過html5原生驗証成功的情況下
-                    event.preventDefault();
-                }
+            // Loop over them and prevent submission
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            //如果表單透過html5原生驗証失敗的情況下
+                            event.preventDefault();
+                            event.stopPropagation();
+                        } else {
+                            //如果表單透過html5原生驗証成功的情況下
+                            event.preventDefault();
+                        }
 
-                form.classList.add('was-validated')
-            }, false)
-            })
+                        form.classList.add('was-validated')
+                    }, false)
+                })
         })()
     </script>
+    <script>
+        let addressData = []; // 用來存放API資料
+
+        async function loadAddressData() {
+            try {
+                const response = await fetch("CityCountyData.json"); // 請換成你真正的API URL
+                addressData = await response.json();
+
+                const citySelect = document.getElementById("ccity");
+
+                // 將所有縣市加入下拉選單
+                addressData.forEach(city => {
+                    const option = document.createElement("option");
+                    option.value = city.CityName;
+                    option.textContent = city.CityName;
+                    citySelect.appendChild(option);
+                });
+            } catch (error) {
+                console.error("載入縣市資料錯誤:", error);
+            }
+        }
+
+        function updateDistricts() {
+            const citySelect = document.getElementById("ccity");
+            const districtSelect = document.getElementById("cdistrict");
+            const selectedCity = citySelect.value;
+
+            // 清空行政區選單
+            districtSelect.innerHTML = '<option value="">---請選擇行政區---</option>';
+
+            if (!selectedCity) return;
+
+            // 找到選中的縣市資料
+            const cityData = addressData.find(city => city.CityName === selectedCity);
+
+            if (cityData) {
+                cityData.AreaList.forEach(area => {
+                    const option = document.createElement("option");
+                    option.value = area.AreaName;
+                    option.textContent = area.AreaName;
+                    districtSelect.appendChild(option);
+                });
+            }
+        }
+
+        // 頁面載入時執行
+        window.addEventListener("DOMContentLoaded", loadAddressData);
+    </script>
 </body>
+
 </html>
