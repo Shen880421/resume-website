@@ -398,7 +398,7 @@ nav.bg {
 
     .nav_section {
         background-color: #987b6b;
-        height: 15vh;
+        height: 20vh;
         display: flex;
         justify-content: end;
         align-items: end;
@@ -447,8 +447,8 @@ nav.bg {
         background-color: #F2E1C9;
     }
     div.sayhi {
-        font-size: clamp(1rem, 10vw, 8rem);
-        margin-right: 20%;
+        font-size: clamp(1rem, 10vw, 6rem);
+        margin-right:8%;
         border: none;
         background-color: rgba(255, 255, 255, 0);
         color: #f7dbc9;
