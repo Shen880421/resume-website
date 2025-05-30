@@ -297,14 +297,14 @@ nav.bg {
     }
 }
 
-@media (min-width: 426px) {
+@media (min-width: 426px) and (max-width:1799px) {
     #mobile {
         display: none;
     }
 
     .nav_ul {
         background-image: url(ps3.png);
-        background-repeat: round;
+        background-repeat:round;
         height: 30vh;
     }
 
@@ -365,7 +365,74 @@ nav.bg {
         font-family: "Shadows Into Light", cursive;
     }
 }
+@media (min-width: 1800px) {
+    #mobile {
+        display: none;
+    }
 
+    .nav_ul {
+        background-color: #987b6b;
+        height: 10vh;
+        display: flex;
+        justify-content: end;
+    }
+
+    .nav_btn {
+        font-size: clamp(0.5rem, 2vw, 4rem);
+    }
+
+    .basicinfo_info {
+        width: fit-content;
+        display: block;
+        height: fit-content;
+        font-size: clamp(8px, 5vw, 24px);
+        align-items: center;
+        background-color: #f0f0f062;
+        border-radius: 15px;
+        padding: 10px;
+        box-shadow: 5px 3px 8px 4px #c48f6dc2;
+    }
+
+    .basicinfo_list {
+        flex-basis: 0;
+        display: flex;
+        flex-wrap: wrap;
+        /* 自動換行（如果寬度不夠） */
+        gap: 20px;
+        /* 元素間距 */
+        justify-content: flex-start;
+        padding-left: 10%;
+    }
+
+    nav.bg {
+        background-color: #F2E1C9;
+    }
+
+    main.leftandright {
+        background-color: #F2E1C9;
+        height: 100%;
+    }
+
+    html {
+        background-color: #F2E1C9;
+    }
+
+    section {
+        margin-bottom: 30px;
+    }
+
+    div.sayhi {
+        font-size: clamp(1rem, 10vw, 5rem);
+        position: absolute;
+        left: 40%;
+        border: none;
+        background-color: rgba(255, 255, 255, 0);
+        color: #f7dbc9;
+        text-shadow: 2px 2px 5px #987b6b;
+        font-style: italic;
+        font-family: "Shadows Into Light", cursive;
+    }
+}
 .open {
     display: block;
 }
