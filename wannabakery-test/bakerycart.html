@@ -428,9 +428,10 @@
                     const div = document.createElement('div');
                     div.className = 'product';
                     div.innerHTML = `
+                    
+            <img src="${product.image_url}" width="100"><br>
             <h3>${product.name}</h3>
             <p>價格：${product.price} 元</p>
-            <img src="${product.image_url}" width="100"><br>
             <button onclick='addToCart(${JSON.stringify(product)})'>加入購物車</button>
           `;
                     productList.appendChild(div);
