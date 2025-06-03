@@ -1,6 +1,6 @@
 <?php
 // products.php
-$pdo = new PDO("mysql:host=localhost;dbname=wannabakery;charset=utf8", "user", "pass");
+$pdo = new PDO("mysql:host=localhost;dbname=wannabakery;charset=utf8", "shen", "ashen2250");
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 $stmt = $pdo->query("SELECT * FROM products");
