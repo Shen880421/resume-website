@@ -316,21 +316,22 @@
             cartList.innerHTML = '';
             let totalPrice = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
-
+            // 顯示購物車內容
             cart.forEach((item, index) => {
                 const li = document.createElement('li');
                 li.innerHTML = `
-        ${item.name} x ${item.quantity} = ${item.price * item.quantity} 元
-        <button type ="button" onclick="increaseQuantity(${index})">＋</button>
-        <button type ="button" onclick="decreaseQuantity(${index})">－</button>
-        <button type ="button" onclick="removeItem(${index})">移除</button>
-      `;
+                    ${item.name} x ${item.quantity} = ${item.price * item.quantity} 元
+                    <button type ="button" onclick="increaseQuantity(${index})">＋</button>
+                    <button type ="button" onclick="decreaseQuantity(${index})">－</button>
+                    <button type ="button" onclick="removeItem(${index})">移除</button>
+                `;
                 cartList.appendChild(li);
-                totalPrice += item.price * item.quantity;
+
             });
 
             let warrantyFee = document.getElementById('warranty').checked ? 100 : 0;
-            let shippingFee = 80; 
+            let shippingFee = 80;
+            // 顯示總金額
             total.textContent = (totalPrice).toFixed(2);
             document.getElementById('warrantyPrice').textContent = warrantyFee ? 'NT$100' : '不需包裝';
             document.getElementById('ALLtotalPrice').textContent = `NT$${(totalPrice + warrantyFee + shippingFee).toFixed(2)}`;
