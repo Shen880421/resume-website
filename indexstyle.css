@@ -198,16 +198,19 @@ nav.bg {
 
     }
 
-    .nav_btn {
-        font-size: 8px;
-        width: 50px;
-        height: 30px;
-    }
-
-    .nav_ul {
+    .nav_section {
+        background-color: #987b6b;
         background-image: url(ps3.png);
         background-repeat: round;
         height: 15vh;
+        display: flex;
+        justify-content: end;
+        align-items: end;
+    }
+
+    .nav_btn {
+        font-size: clamp(0.5rem, 2vw, 4rem);
+        height: 30%;
     }
 
     .basicinfo_info {
@@ -295,21 +298,38 @@ nav.bg {
         font-style: italic;
         font-family: "Shadows Into Light", cursive;
     }
+    div.portfolio_card {
+        border-radius: 30px;
+    }
+    img.portfolio_card_img {
+        border-bottom-right-radius: 30px;
+        border-bottom-left-radius: 30px;
+    }
+    div.card-custiltle {
+        background-color: #987b6b;
+        color: #f7dbc9;
+        padding: 0px;
+    }
 }
 
-@media (min-width: 426px) {
+@media (min-width: 426px) and (max-width:1799px) {
     #mobile {
         display: none;
     }
 
-    .nav_ul {
+    .nav_section {
+        background-color: #987b6b;
         background-image: url(ps3.png);
         background-repeat: round;
         height: 30vh;
+        display: flex;
+        justify-content: end;
+        align-items: end;
     }
 
     .nav_btn {
-        font-size: clamp(0.5rem, 2vw, 1rem);
+        font-size: clamp(0.5rem, 2vw, 4rem);
+        height: 50%;
     }
 
     .basicinfo_info {
@@ -348,15 +368,87 @@ nav.bg {
         background-color: #F2E1C9;
     }
 
-    section {
-        margin-bottom: 30px;
+    div.sayhi {
+        font-size: clamp(0.5rem, 6vw, 5rem);
+        border: none;
+        margin-right: 10px;
+        background-color: rgba(255, 255, 255, 0);
+        color: #f7dbc9;
+        text-shadow: 2px 2px 5px #987b6b;
+        font-style: italic;
+        font-family: "Shadows Into Light", cursive;
+    }
+    div.portfolio_card {
+        border-radius: 30px;
+    }
+    img.portfolio_card_img {
+        border-bottom-right-radius: 30px;
+        border-bottom-left-radius: 30px;
+    }
+    div.card-custiltle {
+        background-color: #987b6b;
+        color: #f7dbc9;
+        padding: 0px;
+    }
+}
+@media (min-width: 1800px) {
+    #mobile {
+        display: none;
     }
 
+    .nav_section {
+        background-color: #987b6b;
+        height: 20vh;
+        display: flex;
+        justify-content: end;
+        align-items: end;
+    }
+
+    .nav_btn {
+        font-size: clamp(0.5rem, 2vw, 4rem);
+        height: 50%;
+    }
+    .section_layout {
+        padding-top: 30px;
+    }
+    .basicinfo_info {
+        width: fit-content;
+        display: block;
+        height: fit-content;
+        font-size: clamp(8px, 5vw, 24px);
+        align-items: center;
+        background-color: #f0f0f062;
+        border-radius: 15px;
+        padding: 10px;
+        box-shadow: 5px 3px 8px 4px #c48f6dc2;
+    }
+
+    .basicinfo_list {
+        flex-basis: 0;
+        display: flex;
+        flex-wrap: wrap;
+        /* 自動換行（如果寬度不夠） */
+        gap: 20px;
+        /* 元素間距 */
+        justify-content: flex-start;
+        padding-left: 10%;
+    }
+
+    nav.bg {
+        background-color: #F2E1C9;
+    }
+
+    main.leftandright {
+        background-color: #F2E1C9;
+        height: 100%;
+    }
+
+    html {
+        background-color: #F2E1C9;
+    }
     div.sayhi {
-        font-size: clamp(1rem, 10vw, 5rem);
-        position: absolute;
-        top: 8%;
-        left: 40%;
+        font-size: clamp(1rem, 10vw, 6rem);
+        margin-right:8%;
         border: none;
         background-color: rgba(255, 255, 255, 0);
         color: #f7dbc9;
@@ -364,8 +456,19 @@ nav.bg {
         font-style: italic;
         font-family: "Shadows Into Light", cursive;
     }
+    div.portfolio_card {
+        border-radius: 30px;
+    }
+    img.portfolio_card_img {
+        border-bottom-right-radius: 30px;
+        border-bottom-left-radius: 30px;
+    }
+    div.card-custiltle {
+        background-color: #987b6b;
+        color: #f7dbc9;
+        padding: 0px;
+    }
 }
-
 .open {
     display: block;
 }

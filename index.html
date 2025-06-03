@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>陳明賢Shen的個人網站</title>
     <link rel="stylesheet" href="CSS_reset.css">
-    <link rel="stylesheet" href="indexstyle.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fontisto@latest/css/fontisto/fontisto.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+Mono+TC&family=Shadows+Into+Light&display=swap"
-        rel="stylesheet">
+    rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <link rel="stylesheet" href="indexstyle.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
     <script>
         new WOW().init();
@@ -23,17 +23,15 @@
 
 <body>
     <nav class="bg">
-        <div class="sayhi">
-            Hi!     I'm Shen.
-        </div>
-        <table>
-            <ul class="nav_ul">
-                <li><button class="nav_btn infoandskill_btn">基本資料與技能</button></li>
-                <li><button class="nav_btn portfolio_btn">作品集</button></li>
-                <li><button class="nav_btn hobbyandpersonality_btn">興趣與人格特質</button></li>
-                <li><button class="nav_btn experience_btn">轉職經歷</button></li>
-            </ul>
-        </table>
+        <section class="nav_section">
+            <div class="sayhi">
+                Hi! I'm Shen.
+            </div>
+            <button class="nav_btn infoandskill_btn">基本資料與技能</button>
+            <button class="nav_btn portfolio_btn">作品集</button>
+            <button class="nav_btn hobbyandpersonality_btn">興趣與人格特質</button>
+            <button class="nav_btn experience_btn">轉職經歷</button>
+        </section>
     </nav>
     <main class="leftandright" id="desktop">
         <header class="left">
@@ -60,10 +58,7 @@
         </header>
 
         <header class="right">
-            <!-- <section class="right_size">
-                <img src='ps3.png' alt="陳明賢Shen的照片" class="photo2">
-            </section> -->
-            <section class="info wow animate__animated animate__fadeIn" data-wow-duration="2s">
+            <section class="info wow animate__animated animate__fadeIn section_layout" data-wow-duration="2s">
                 <h1 class="h1">基本資料</h1>
                 <table class="basicinfo_table">
                     <tbody class="tbody">
@@ -94,7 +89,7 @@
                     </tbody>
                 </table>
             </section>
-            <section class="skill wow animate__animated animate__fadeIn" data-wow-duration="2s">
+            <section class="skill wow animate__animated animate__fadeIn section_layout" data-wow-duration="2s">
                 <h1 class="h1 ability">技能</h1>
                 <ul class="basicinfo_list">
                     <li class="basicinfo_info skill">
@@ -148,11 +143,24 @@
                     </li>
                 </ul>
             </section>
-            <section class="portfolio nav_close wow animate__animated animate__fadeIn" data-wow-duration="2s">
+            <section class="portfolio nav_close wow animate__animated animate__fadeIn section_layout"
+                data-wow-duration="2s">
                 <h1 class="h1 compliment">作品集</h1>
-                <p class="context">捲動測試</p>
+                <div class="row col-12">
+                    <div class="card col-4 p-0 ms-5 portfolio_card">
+                        <div class="card-header card-custiltle text-center">
+                            <h4 class="p-0 mt-1">甜點店官方網站</h4>
+                        </div>
+                        <div class="card-body p-0 portfolio_card">
+                            <a href="wannabakery\wannabakery.html">
+                                <img  class="ratio portfolio_card_img" src="wannabakery\wannabakerylogo.jpg" alt="wannabakery">
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </section>
-            <section class="hobby nav_close wow animate__animated animate__fadeIn" data-wow-duration="2s">
+            <section class="hobby nav_close wow animate__animated animate__fadeIn section_layout"
+                data-wow-duration="2s">
                 <h1 class="h1 interest">興趣</h1>
                 <article class="context">
                     烘焙
@@ -178,7 +186,8 @@
                     </table>
                 </article>
             </section>
-            <section class="personality nav_close wow animate__animated animate__fadeIn" data-wow-duration="2s">
+            <section class="personality nav_close wow animate__animated animate__fadeIn section_layout"
+                data-wow-duration="2s">
                 <h1 class="h1 personality">人格特質</h1>
                 <article class="context">
                     <p>我的MBTI類型為: <em>INFJ</em></p>
@@ -208,7 +217,8 @@
                     </table>
                 </article>
             </section>
-            <section class="experience nav_close wow animate__animated animate__fadeIn" data-wow-duration="2s">
+            <section class="experience nav_close wow animate__animated animate__fadeIn section_layout"
+                data-wow-duration="2s">
                 <h1 class="h1 experience">轉職經歷</h1>
                 <article class="context">
                     <p>
@@ -356,7 +366,18 @@
             </section>
             <section class="portfolio_m nav_close wow animate__animated animate__fadeIn" data-wow-duration="2s">
                 <h1 class="h1">作品集</h1>
-                <p class="context">捲動測試</p>
+                <div class="row col-12">
+                    <div class="card col-4 p-0 ms-5 portfolio_card">
+                        <div class="card-header card-custiltle text-center">
+                            <h4 class="p-0 mt-1 fs-6">甜點店官方網站</h4>
+                        </div>
+                        <div class="card-body p-0 portfolio_card">
+                            <a href="wannabakery\wannabakery.html">
+                                <img  class="ratio portfolio_card_img" src="wannabakery\wannabakerylogo.jpg" alt="wannabakery">
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </section>
             <section class="hobby_m nav_close wow animate__animated animate__fadeIn" data-wow-duration="2s">
                 <h1 class="h1">興趣</h1>
