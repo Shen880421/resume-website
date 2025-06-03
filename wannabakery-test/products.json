@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "焦糖奶油夾心餅乾",
+    "price": 450,
+    "image_url": "caramelbuttercookie-1-1.jpg"
+  },
+  {
+    "id": 2,
+    "name": "橙香生巧馬卡龍",
+    "price": 720,
+    "image_url": "orachocomacaroon.jpg"
+  },
+  {
+    "id": 3,
+    "name": "香草生乳捲",
+    "price": 600,
+    "image_url": "vanilacakeroll.jpg"
+  }
+]
