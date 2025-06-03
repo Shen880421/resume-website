@@ -329,7 +329,6 @@
                 totalPrice += item.price * item.quantity;
             });
 
-            total.textContent = totalPrice.toFixed(2);
             let warrantyFee = document.getElementById('warranty').checked ? 100 : 0;
             let shippingFee = 80; 
             total.textContent = (totalPrice).toFixed(2);
