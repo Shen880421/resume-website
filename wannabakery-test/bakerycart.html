@@ -41,9 +41,10 @@
                 </div>
             </div>
             <div class="col-8 text-end nav_button">
-                <a href="wannabakery.html" role="button" type="button" class="btn btn_customcolor"
-                    autocomplete="off" aria-pressed="true">首頁</a>
-                <a href="../index.html" role="button" type="button" class="btn btn_customcolor" autocomplete="off">聯絡我們</a>
+                <a href="wannabakery.html" role="button" type="button" class="btn btn_customcolor" autocomplete="off"
+                    aria-pressed="true">首頁</a>
+                <a href="../index.html" role="button" type="button" class="btn btn_customcolor"
+                    autocomplete="off">聯絡我們</a>
                 <a role="button" type="button" class="btn btn_customcolor" autocomplete="off">產品介紹</a>
                 <a href="bakerycart.html" type="button" role="button" class="btn btn_customcolor active"
                     autocomplete="off">購物車</a>
@@ -64,82 +65,8 @@
                     <h4>選擇產品</h4>
                 </div>
                 <div class="card-body">
-                    <div class="row row-cols-1 row-cols-md-3 ">
-                        <!--產品1-->
-                        <div class="col">
-                            <div class="card prod-card" onclick="selectProduct(this, 'product1', 450 )"
-                                id="whole_card1">
-                                <div class="card-body">
-                                    <img class="card-img-top">
-                                    <!--產品標題-->
-                                    <div class="d-flex justify-content-between align-items-center mt-1 mb-2 row">
-                                        <img src="caramelbuttercookie-1-1.jpg" class="col-12 mb-2">
-                                        <h5 class="prod_title text-center col-8 pe-0">焦糖奶油夾心餅乾</h5>
-                                        <span class="col-4 fs-6 ps-0">10個入</span>
-                                        <span class="badge bg-danger col-2 ms-2">推薦</span>
-                                    </div>
-                                    <p class="card-text">需冷藏宅配</p>
-                                    <div class="d-flex justify-content-between align-items-center mb-2">
-                                        <span>NT 450</span>
-                                        <div class="form-check">
-                                            <input type="checkbox" class="form-check-input" id="product1" name="product"
-                                                value="焦糖奶油夾心餅乾">
-                                            <label for="product1" class="form-check-label">選擇</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--產品2-->
-                        <div class="col">
-                            <div class="card prod-card" onclick="selectProduct(this, 'product2', 720 )"
-                                id="whole_card2">
-                                <div class="card-body">
-                                    <img class="card-img-top">
-                                    <!--產品標題-->
-                                    <div class="d-flex justify-content-between align-items-center mb-2 row">
-                                        <img src="orachocomacaroon.jpg" class="col-12 mb-2">
-                                        <h5 class="prod_title text-center col-9 pe-0">橙香生巧馬卡龍</h5>
-                                        <span class="col-3 fs-6 ps-0">6顆入</span>
-                                        <span class="badge bg-success col-2 ms-2">熱門</span>
-                                    </div>
-                                    <p class="card-text">需冷凍宅配</p>
-                                    <div class="d-flex justify-content-between align-items-center mb-2">
-                                        <span>NT 720</span>
-                                        <div class="form-check">
-                                            <input type="checkbox" class="form-check-input" id="product2" name="product"
-                                                value="橙香生巧馬卡龍">
-                                            <label for="product2" class="form-check-label">選擇</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--產品3-->
-                        <div class="col">
-                            <div class="card prod-card" onclick="selectProduct(this, 'product3', 600 )"
-                                id="whole_card3">
-                                <div class="card-body">
-                                    <img class="card-img-top">
-                                    <!--產品標題-->
-                                    <div class="d-flex justify-content-between align-items-center mb-2 row">
-                                        <img src="vanilacakeroll.jpg" class="col-12 mb-2">
-                                        <h5 class="prod_title col-9 pe-0">香草生乳捲</h5>
-                                        <span class="col-3 fs-6 ps-0">一條入</span>
-                                        <span class="badge bg-warning col-2 ms-2">新品</span>
-                                    </div>
-                                    <p class="card-text">需冷藏宅配</p>
-                                    <div class="d-flex justify-content-between align-items-center mb-2">
-                                        <span>NT 600</span>
-                                        <div class="form-check">
-                                            <input type="checkbox" class="form-check-input" id="product3" name="product"
-                                                value="香草生乳捲">
-                                            <label for="product3" class="form-check-label">選擇</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="row row-cols-1 row-cols-md-3 " id=productList>
+
                     </div>
                     <div class="form-check mt-1">
                         <input type="checkbox" class="form-check-input" id="warranty">
@@ -147,6 +74,11 @@
                         <div class="text-end">因產品皆為手工製作，每種限購一份。<br>甜點皆需冷凍/藏宅配 運費+NT$80</div>
                     </div>
                 </div>
+            </div>
+            <div class="card">
+                <h2>🛒 購物車</h2>
+                <ul id="cartList"></ul>
+                <p><strong>總金額：</strong><span id="total">0</span> 元</p>
             </div>
 
         </section>
@@ -481,6 +413,55 @@
 
         // 頁面載入時執行
         window.addEventListener("DOMContentLoaded", loadAddressData);
+    </script>
+    <script>
+        const productList = document.getElementById('productList');
+        const cartList = document.getElementById('cartList');
+        const total = document.getElementById('total');
+        let cart = [];
+
+        // 取得商品資料
+        fetch('products.php')
+            .then(res => res.json())
+            .then(data => {
+                data.forEach(product => {
+                    const div = document.createElement('div');
+                    div.className = 'product';
+                    div.innerHTML = `
+            <h3>${product.name}</h3>
+            <p>價格：${product.price} 元</p>
+            <img src="${product.image_url}" width="100"><br>
+            <button onclick='addToCart(${JSON.stringify(product)})'>加入購物車</button>
+          `;
+                    productList.appendChild(div);
+                });
+            });
+
+        // 加入購物車
+        function addToCart(product) {
+            const existing = cart.find(item => item.id === product.id);
+            if (existing) {
+                existing.quantity++;
+            } else {
+                cart.push({ ...product, quantity: 1 });
+            }
+            renderCart();
+        }
+
+        // 顯示購物車
+        function renderCart() {
+            cartList.innerHTML = '';
+            let totalPrice = 0;
+
+            cart.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = `${item.name} x ${item.quantity} = ${item.price * item.quantity} 元`;
+                cartList.appendChild(li);
+                totalPrice += item.price * item.quantity;
+            });
+
+            total.textContent = totalPrice.toFixed(2);
+        }
     </script>
 </body>
 
