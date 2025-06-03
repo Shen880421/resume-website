@@ -239,46 +239,46 @@
         let selectedProductPricels = [];
         let shippingfee = 80;
         //點擊產品卡片時
-        function selectProduct(cardEl, pid, price) {
+        // function selectProduct(cardEl, pid, price) {
 
-            //先還原每個產品卡片被選取的狀態顯示
-            // document.querySelectorAll('.prod-card').forEach(card => {
-            //     card.classList.remove('selected');
-            // })
-            //套用選取狀態
-            if (document.getElementById(pid).checked != true) {
-                document.getElementById(pid).checked = true;
-                cardEl.classList.add("selected");
-                selectedProductPrice = price;
-                selectedProducttotalPrice += selectedProductPrice;
-                if (selectedcount <= 3) {
-                    selectedcount += 1;
-                    selectedproduct.push(document.getElementById(pid).value);
-                    selectedProductPricels.push(`NTD$${price}`);
-                    document.getElementById("productName").textContent = selectedproduct.join(" + ");
-                    document.getElementById("productPrice").textContent = selectedProductPricels.join(" + ");
-                }
-            } else if (document.getElementById(pid).checked = true) {
-                selectedcount -= 1;
-                document.getElementById(pid).checked = false;
-                cardEl.classList.remove("selected");
-                document.getElementById("productPrice").textContent = `NTD$0`;
-                selectedProductPrice = price;
-                selectedProducttotalPrice -= selectedProductPrice;
+        //     //先還原每個產品卡片被選取的狀態顯示
+        //     // document.querySelectorAll('.prod-card').forEach(card => {
+        //     //     card.classList.remove('selected');
+        //     // })
+        //     //套用選取狀態
+        //     if (document.getElementById(pid).checked != true) {
+        //         document.getElementById(pid).checked = true;
+        //         cardEl.classList.add("selected");
+        //         selectedProductPrice = price;
+        //         selectedProducttotalPrice += selectedProductPrice;
+        //         if (selectedcount <= 3) {
+        //             selectedcount += 1;
+        //             selectedproduct.push(document.getElementById(pid).value);
+        //             selectedProductPricels.push(`NTD$${price}`);
+        //             document.getElementById("productName").textContent = selectedproduct.join(" + ");
+        //             document.getElementById("productPrice").textContent = selectedProductPricels.join(" + ");
+        //         }
+        //     } else if (document.getElementById(pid).checked = true) {
+        //         selectedcount -= 1;
+        //         document.getElementById(pid).checked = false;
+        //         cardEl.classList.remove("selected");
+        //         document.getElementById("productPrice").textContent = `NTD$0`;
+        //         selectedProductPrice = price;
+        //         selectedProducttotalPrice -= selectedProductPrice;
 
-                const productName = document.getElementById(pid).value;
-                selectedproduct = selectedproduct.filter(p => p !== productName);
-                selectedProductPricels = selectedProductPricels.filter(p => p !== `NTD$${price}`);
+        //         const productName = document.getElementById(pid).value;
+        //         selectedproduct = selectedproduct.filter(p => p !== productName);
+        //         selectedProductPricels = selectedProductPricels.filter(p => p !== `NTD$${price}`);
 
-                // 更新 UI 顯示
-                if (selectedproduct.length === 0) {
-                    document.getElementById("productName").textContent = "尚未選擇商品";
-                    document.getElementById("productPrice").textContent = "尚未選擇商品";
-                } else {
-                    document.getElementById("productName").textContent = selectedproduct.join(" + ");
-                    document.getElementById("productPrice").textContent = selectedProductPricels.join(" + ");
-                }
-            }
+        //         // 更新 UI 顯示
+        //         if (selectedproduct.length === 0) {
+        //             document.getElementById("productName").textContent = "尚未選擇商品";
+        //             document.getElementById("productPrice").textContent = "尚未選擇商品";
+        //         } else {
+        //             document.getElementById("productName").textContent = selectedproduct.join(" + ");
+        //             document.getElementById("productPrice").textContent = selectedProductPricels.join(" + ");
+        //         }
+        //     }
             //勾選對應的元素
             //更新訂單摘要中的產品名稱
             //document.getElementById("productName").textContent = pid;
@@ -292,14 +292,14 @@
             //方案2
             //updateTotal(price);
 
-            updateTotal();
-        }
+            // updateTotal();
+        // }
         //點選包裝禮物時
-        document.getElementById("warranty").addEventListener("click", () => {
-            if (selectedProductPrice > 0) {
-                updateTotal()
-            }
-        })
+        // document.getElementById("warranty").addEventListener("click", () => {
+        //     if (selectedProductPrice > 0) {
+        //         updateTotal()
+        //     }
+        // })
 
         //計算總金額
         function updateTotal() {
@@ -326,7 +326,7 @@
                 document.getElementById("warrantyPrice").textContent = `NTD$${warrantyPrice}`;
             }
 
-            let ALLtotalPrice = selectedProducttotalPrice + warrantyPrice + shippingfee; //+ payment_fee;
+            let ALLtotalPrice = totalPrice + warrantyPrice + shippingfee; //+ payment_fee;
             document.getElementById("ALLtotalPrice").textContent = `NTD$${ALLtotalPrice}`;
 
         }
