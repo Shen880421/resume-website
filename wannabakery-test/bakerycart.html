@@ -200,14 +200,6 @@
                 <div class="card-body">
                     <div class="order-summary">
                         <div class="row mt-2">
-                            <div class="col-7">產品</div>
-                            <div class="col-5 text-end" id="productName">尚未選擇商品</div>
-                        </div>
-                        <div class="row mt-2">
-                            <div class="col-7">價格</div>
-                            <div class="col-5 text-end" id="productPrice">尚未選擇商品</div>
-                        </div>
-                        <div class="row mt-2">
                             <div class="col-7">禮盒包裝服務</div>
                             <div class="col-5 text-end" id="warrantyPrice">不需包裝</div>
                         </div>
@@ -217,7 +209,7 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-7">總計</div>
-                            <div class="col-5 text-end" id="totalPrice">NT$0</div>
+                            <div class="col-5 text-end" id="ALLtotalPrice">NT$0</div>
                         </div>
                     </div>
                     <div class="form-check mt-2">
@@ -334,8 +326,8 @@
                 document.getElementById("warrantyPrice").textContent = `NTD$${warrantyPrice}`;
             }
 
-            let totalPrice = selectedProducttotalPrice + warrantyPrice + shippingfee; //+ payment_fee;
-            document.getElementById("totalPrice").textContent = `NTD$${totalPrice}`;
+            let ALLtotalPrice = selectedProducttotalPrice + warrantyPrice + shippingfee; //+ payment_fee;
+            document.getElementById("ALLtotalPrice").textContent = `NTD$${ALLtotalPrice}`;
 
         }
 
