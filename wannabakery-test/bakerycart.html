@@ -314,7 +314,8 @@
 
         function renderCart() {
             cartList.innerHTML = '';
-            let totalPrice = 0;
+            let totalPrice = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+
 
             cart.forEach((item, index) => {
                 const li = document.createElement('li');
@@ -329,7 +330,11 @@
             });
 
             total.textContent = totalPrice.toFixed(2);
-            
+            let warrantyFee = document.getElementById('warranty').checked ? 100 : 0;
+            let shippingFee = 80; 
+            total.textContent = (totalPrice).toFixed(2);
+            document.getElementById('warrantyPrice').textContent = warrantyFee ? 'NT$100' : '不需包裝';
+            document.getElementById('ALLtotalPrice').textContent = `NT$${(totalPrice + warrantyFee + shippingFee).toFixed(2)}`;
         }
 
         function increaseQuantity(index) {
