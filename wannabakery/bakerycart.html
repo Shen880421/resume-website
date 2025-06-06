@@ -66,7 +66,7 @@
                 </div>
                 <div class="card-body">
                     <div class="row row-cols-1 row-cols-md-3 " id=productList>
-
+                        <!-- 用script將從DB取得的資料標籤後插入這裡 -->
                     </div>
                     <div class="form-check mt-1">
                         <input type="checkbox" class="form-check-input" id="warranty">
@@ -236,7 +236,7 @@
 
         async function loadAddressData() {
             try {
-                const response = await fetch("CityCountyData.json"); // 請換成你真正的API URL
+                const response = await fetch("CityCountyData.json");
                 addressData = await response.json();
 
                 const citySelect = document.getElementById("ccity");
@@ -263,8 +263,10 @@
 
             if (!selectedCity) return;
 
-            // 找到選中的縣市資料
+            // 找到選中的縣市資料，後續才能針對該縣市的區域做FOREACH
+            console.log(addressData)
             const cityData = addressData.find(city => city.CityName === selectedCity);
+            console.log(cityData)
 
             if (cityData) {
                 cityData.AreaList.forEach(area => {
@@ -293,11 +295,11 @@
                     const div = document.createElement('div');
                     div.className = 'product';
                     div.innerHTML = `
-          <img src="${product.image_url}" width="100"><br>
-          <h3>${product.name}</h3>
-          <p>價格：${product.price} 元</p>
-          <button type ="button" onclick='addToCart(${JSON.stringify(product)})'>加入購物車</button>
-        `;
+                        <img src="${product.image_url}" width="100"><br>
+                        <h3 class="fs-2">${product.name}</h3>
+                        <p>價格：${product.price} 元</p>
+                        <button class="mb-5" type ="button" onclick='addToCart(${JSON.stringify(product)})'>加入購物車</button>
+                        `;
                     productList.appendChild(div);
                 });
             });
@@ -314,7 +316,9 @@
 
         function renderCart() {
             cartList.innerHTML = '';
-            let totalPrice = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+            // 顯示產品總價
+            // let totalPrice = cart.reduce((sum, item) =>  sum + item.price * item.quantity, 0);
+            let totalPrice = cart.reduce((sum, item) => {return sum + item.price * item.quantity;}, 0);
 
             // 顯示購物車內容
             cart.forEach((item, index) => {
@@ -332,7 +336,7 @@
             let warrantyFee = document.getElementById('warranty').checked ? 100 : 0;
             let shippingFee = 80;
             // 顯示總金額
-            total.textContent = (totalPrice).toFixed(2);
+            total.textContent = (totalPrice);
             document.getElementById('warrantyPrice').textContent = warrantyFee ? 'NT$100' : '不需包裝';
             document.getElementById('ALLtotalPrice').textContent = `NT$${(totalPrice + warrantyFee + shippingFee).toFixed(2)}`;
         }
