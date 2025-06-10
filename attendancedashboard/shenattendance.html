@@ -69,7 +69,7 @@
                                 <h6>遲到時數</h6>
                                 <div id="late" class="card-title-number text-primary">---</div>
                                 <h6>早退時數</h6>
-                                <div id="leave early" class="card-title-number text-primary">---</div>
+                                <div id="leave_early" class="card-title-number text-primary">---</div>
                             </div>
                         </div>
                     </div>
@@ -143,13 +143,22 @@
 
     <script>
         const totalclasshours = document.getElementById("totalclasshours");
+        const attendance = document.getElementById("attendance");
+        const attendancerate = document.getElementById("attendancerate");
+        const unattendance = document.getElementById("unattendance");
+        const late = document.getElementById("late");
+        const leave_early = document.getElementById("leave_early");
         fetch('shenattendance.json')
             .then(res => res.json())
             .then(data => {
                 data.forEach(hours => {
-                    console.log(typeof(hours.class_hours))
-                    totalclasshours.innerHTML = `${hours.class_hours}`;
-                    
+                    console.log(typeof(parseFloat(hours.leave_early_hours)))
+                    totalclasshours.innerHTML = `${parseFloat(hours.class_hours).toFixed(2)}`;
+                    attendance.innerHTML = `${parseFloat(hours.attended_hours).toFixed(2)}`;
+                    attendancerate.innerHTML =`${parseFloat(hours.class_hours).toFixed(2)}`;
+                    unattendance.innerHTML =`${parseFloat(hours.absent_hours).toFixed(2)}`;
+                    late.innerHTML = `${parseFloat(hours.late_hours).toFixed(2)}`;
+                    leave_early.innerHTML = `${parseFloat(hours.leave_early_hours).toFixed(2)}`;
                 });
             })
     </script>
