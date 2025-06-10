@@ -140,7 +140,7 @@
             </div>
         </div>
     </div> -->
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- 抓取時數 -->
     <script>
         const totalclasshours = document.getElementById("totalclasshours");
@@ -153,94 +153,104 @@
             .then(res => res.json())
             .then(data => {
                 data.forEach(hours => {
-                    console.log(typeof(parseFloat(hours.leave_early_hours)))
+                    // console.log(typeof (parseFloat(hours.leave_early_hours)))
                     totalclasshours.innerHTML = `${parseFloat(hours.class_hours).toFixed(2)} 小時`;
                     attendance.innerHTML = `${parseFloat(hours.attended_hours).toFixed(2)} 小時`;
                     const attendanceratenum = parseInt((parseFloat(hours.attended_hours) / parseFloat(hours.class_hours)) * 100);
-                    console.log(typeof(attendancerate));
+                    // console.log(typeof (attendancerate));
                     attendancerate.innerHTML = `${attendanceratenum}%`;
-                    unattendance.innerHTML =`${parseFloat(hours.absent_hours).toFixed(2)} 小時`;
+                    unattendance.innerHTML = `${parseFloat(hours.absent_hours).toFixed(2)} 小時`;
                     late.innerHTML = `${parseFloat(hours.late_hours).toFixed(2)} 小時`;
                     leave_early.innerHTML = `${parseFloat(hours.leave_early_hours).toFixed(2)} 小時`;
+                    // 出缺席圓餅圖 
+                    const ctx = document.getElementById('myAttenChart');
+                    new Chart(ctx, {
+                        type: 'pie',
+                        data: {
+                            labels: ['出席', '缺席'],
+                            datasets: [{
+                                label: '出缺席',
+                                data: [parseFloat(hours.attended_hours).toFixed(2), parseFloat(hours.absent_hours).toFixed(2)],
+                                backgroundColor: [
+                                    'rgba(75, 192, 192, 0.6)', // 綠色
+                                    'rgba(255, 99, 132, 0.6)'  // 紅色
+                                ],
+                                borderWidth: 0 // 邊框寬度
+                            }]
+                        },
+                    });
                 });
             })
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- <script>// 出缺席圓餅圖
-        const ctx = document.getElementById('myAttenChart');
-        new Chart(ctx, {
-            type: 'pie',
-            data: {
-                labels: ['出席', '缺席'],
-                datasets: [{
-                    label: '出缺席',
-                    data: [900, 100],
-                    backgroundColor: [
-                        'rgba(75, 192, 192, 0.6)', // 綠色
-                        'rgba(255, 99, 132, 0.6)'  // 紅色
-                    ],
-                    borderWidth: 0 // 邊框寬度
-                }]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true // Y 軸從 0 開始
-                    }
-                }
-            }
-        });
-    </script>
     <script>// 每日上課時間折線圖
         const ctx_ct = document.getElementById('myclasstimeChart');
-        new Chart(ctx_ct, {
-            type: 'line',
-            data: {
-                labels: ['出席', '缺席'],
-                datasets: [{
-                    label: '出缺席',
-                    data: [900, 100],
-                    backgroundColor: [
-                        'rgba(75, 192, 192, 0.6)', // 綠色
-                        'rgba(255, 99, 132, 0.6)'  // 紅色
-                    ],
-                    borderWidth: 0 // 邊框寬度
-                }]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true // Y 軸從 0 開始
-                    }
-                }
-            }
-        });
-    </script>
-    <script>// 每日在校時間折線圖
         const ctx_at = document.getElementById('myattentimeChart');
-        new Chart(ctx_at, {
-            type: 'line',
-            data: {
-                labels: ['出席', '缺席'],
-                datasets: [{
-                    label: '出缺席',
-                    data: [900, 100],
-                    backgroundColor: [
-                        'rgba(75, 192, 192, 0.6)', // 綠色
-                        'rgba(255, 99, 132, 0.6)'  // 紅色
-                    ],
-                    borderWidth: 0 // 邊框寬度
-                }]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true // Y 軸從 0 開始
-                    }
+        let mylinechart;
+        async function linechart() {
+            try {
+                const response = await fetch('hoursline.json');
+                if (!response.ok) {
+                    throw new Error(response.status);
                 }
+                const res = await response.json();
+                console.log(typeof (res));
+                console.log(res);
+                const classdate = res.map(item => item.class_date);
+                const classhours = res.map(item => item.class_hours);
+                const attenhours = res.map(item => item.raw_hours);
+
+                mylinechart = new Chart(ctx_ct, {
+                    type: 'line',
+                    data: {
+                        labels: classdate,
+                        datasets: [{
+                            label: '每日上課時間',
+                            data: classhours,
+                            backgroundColor: [
+                                'rgba(75, 192, 192, 0.6)', // 綠色
+                            ]
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true // Y 軸從 0 開始
+                            }
+                        }
+                    }
+                });
+            // 每日在校時間折線圖
+                new Chart(ctx_at, {
+                    type: 'line',
+                    data: {
+                        labels: classdate,
+                        datasets: [{
+                            label: '每日在校時間折線圖',
+                            data: attenhours,
+                            backgroundColor: [
+                                'rgba(75, 192, 192, 0.6)', // 綠色
+                            ],
+                            borderWidth: 5 // 邊框寬度
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true // Y 軸從 0 開始
+                            }
+                        }
+                    }
+                });
+            } catch (error) {
+                console.error(error);
             }
-        });
-    </script> -->
+
+        }
+
+        
+
+        window.onload = linechart;
+    </script>
 </body>
 
 </html>
