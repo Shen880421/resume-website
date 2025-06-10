@@ -1,9 +1,10 @@
 [
-{"type":"header","version":"5.2.1","comment":"Export to JSON plugin for PHPMyAdmin"},
-{"type":"database","name":"test"},
-{"type":"table","name":"shenattendance","database":"test","data":
-[
-{"SUM(class_hours)":"199","SUM(raw_hours)":"237.52999997138977","SUM(attended_hours)":"191.9800000190735","SUM(late_hours)":"0","SUM(leave_early_hours)":"3.970000047236681","SUM(absent_hours)":"9.019999999552965"}
-]
-}
+    {
+        "class_hours": "199",
+        "raw_hours": "237.52999997138977",
+        "attended_hours": "191.9800000190735",
+        "late_hours": "0",
+        "leave_early_hours": "3.970000047236681",
+        "absent_hours": "9.019999999552965"
+    }
 ]
