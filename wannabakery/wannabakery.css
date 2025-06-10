@@ -19,9 +19,12 @@ body {
         display: none;
     }
     a.active {
-        background-color: #B6C4CE !important;
+        background-color: #E0E4E4 !important;
     }
     nav.nav_top {
+        background-color: #E0E4E4;
+    }
+    a.div_bgcolor {
         background-color: #E0E4E4;
     }
     div.nav_logoname {
@@ -93,9 +96,12 @@ body {
         display: none;
     }
     a.active {
-        background-color: #B6C4CE !important;
+        background-color: #E0E4E4 !important;
     }
     nav.nav_top {
+        background-color: #E0E4E4;
+    }
+    a.div_bgcolor {
         background-color: #E0E4E4;
     }
 
