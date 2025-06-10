@@ -141,6 +141,7 @@
         </div>
     </div> -->
 
+    <!-- 抓取時數 -->
     <script>
         const totalclasshours = document.getElementById("totalclasshours");
         const attendance = document.getElementById("attendance");
@@ -153,12 +154,14 @@
             .then(data => {
                 data.forEach(hours => {
                     console.log(typeof(parseFloat(hours.leave_early_hours)))
-                    totalclasshours.innerHTML = `${parseFloat(hours.class_hours).toFixed(2)}`;
-                    attendance.innerHTML = `${parseFloat(hours.attended_hours).toFixed(2)}`;
-                    attendancerate.innerHTML =`${parseFloat(hours.class_hours).toFixed(2)}`;
-                    unattendance.innerHTML =`${parseFloat(hours.absent_hours).toFixed(2)}`;
-                    late.innerHTML = `${parseFloat(hours.late_hours).toFixed(2)}`;
-                    leave_early.innerHTML = `${parseFloat(hours.leave_early_hours).toFixed(2)}`;
+                    totalclasshours.innerHTML = `${parseFloat(hours.class_hours).toFixed(2)} 小時`;
+                    attendance.innerHTML = `${parseFloat(hours.attended_hours).toFixed(2)} 小時`;
+                    const attendanceratenum = parseInt((parseFloat(hours.attended_hours) / parseFloat(hours.class_hours)) * 100);
+                    console.log(typeof(attendancerate));
+                    attendancerate.innerHTML = `${attendanceratenum}%`;
+                    unattendance.innerHTML =`${parseFloat(hours.absent_hours).toFixed(2)} 小時`;
+                    late.innerHTML = `${parseFloat(hours.late_hours).toFixed(2)} 小時`;
+                    leave_early.innerHTML = `${parseFloat(hours.leave_early_hours).toFixed(2)} 小時`;
                 });
             })
     </script>
